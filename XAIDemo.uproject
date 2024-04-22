@@ -34,6 +34,10 @@
 			"Name": "XAI",
 			"Enabled": true,
 			"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/product/03625af438ce4dc89df9d8ba1f7aeecf"
+		},
+		{
+			"Name": "AnimationBudgetAllocator",
+			"Enabled": true
 		}
 	]
 }
