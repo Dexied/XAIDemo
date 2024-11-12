@@ -1,6 +1,6 @@
 {
 	"FileVersion": 3,
-	"EngineAssociation": "5.4",
+	"EngineAssociation": "5.5",
 	"Category": "",
 	"Description": "",
 	"Modules": [
@@ -28,8 +28,7 @@
 		},
 		{
 			"Name": "XAI",
-			"Enabled": true,
-			"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/product/9b7a0fabe9af4e67969b39b99b50761d"
+			"Enabled": true
 		},
 		{
 			"Name": "AnimationBudgetAllocator",
