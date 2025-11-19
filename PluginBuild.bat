@@ -1,1 +1,1 @@
-B:\UnrealEngine\UE_5.6\Engine\Build\BatchFiles\RunUAT.bat BuildPlugin -Plugin="B:\Projects\XAIDemo\Plugins\XAI\XAI.uplugin" -Package="B:\Projects\XAIDemo\Builds\XAI" -Rocket -2019
+B:\UnrealEngineSource\UnrealEngine\Engine\Build\BatchFiles\RunUAT.bat BuildPlugin -Plugin="B:\Projects\XAIDemo\Plugins\XAI\XAI.uplugin" -Package="B:\Projects\XAIDemo\Builds\XAI" -Rocket -2019
