@@ -3,10 +3,10 @@ Using bundled DotNet SDK version: 8.0.412 win-x64
 Starting AutomationTool...
 Parsing command line: BuildPlugin -Plugin=B:\Projects\XAIDemo\Plugins\XAI\XAI.uplugin -Package=B:\Projects\XAIDemo\Builds\XAI -Rocket -2019
 Initializing script modules...
-Total script module initialization time: 0.25 s.
+Total script module initialization time: 0.23 s.
 Using B:\VisualStudio2022\MSBuild\Current\Bin\MSBuild.exe
 Executing commands...
-Copying 1109 file(s) using max 64 thread(s)
+Copying 1133 file(s) using max 64 thread(s)
 Reading plugin from B:\Projects\XAIDemo\Builds\XAI\HostProject\Plugins\XAI\XAI.uplugin...
 Building plugin for host platforms: Win64
 Running: B:\UnrealEngineSource\UnrealEngine\Engine\Binaries\ThirdParty\DotNet\8.0.412\win-x64\dotnet.exe "B:\UnrealEngineSource\UnrealEngine\Engine\Binaries\DotNET\UnrealBuildTool\UnrealBuildTool.dll" UnrealEditor Win64 Development -Project="B:\Projects\XAIDemo\Builds\XAI\HostProject\HostProject.uproject" -plugin="B:\Projects\XAIDemo\Builds\XAI\HostProject\Plugins\XAI\XAI.uplugin" -noubtmakefiles -manifest="B:\Projects\XAIDemo\Builds\XAI\HostProject\Saved\Manifest-UnrealEditor-Win64-Development.xml" -nohotreload -log="B:\UnrealEngineSource\UnrealEngine\Engine\Programs\AutomationTool\Saved\Logs\UBA-UnrealEditor-Win64-Development.txt"
@@ -15,7 +15,7 @@ Using 'git status' to determine working set for adaptive non-unity build (B:\Unr
 UHT compiled-in object format Default
 Parsing headers for UnrealEditor
   Running Internal UnrealHeaderTool B:\Projects\XAIDemo\Builds\XAI\HostProject\HostProject.uproject B:\Projects\XAIDemo\Builds\XAI\HostProject\Intermediate\Build\Win64\UnrealEditor\Development\UnrealEditor.uhtmanifest -WarningsAsErrors
-UHT processed UnrealEditor in 13.0809467 seconds (30 files written)
+UHT processed UnrealEditor in 2.064696 seconds (30 files written)
 Writing manifest to B:\Projects\XAIDemo\Builds\XAI\HostProject\Saved\Manifest-UnrealEditor-Win64-Development.xml
 Building UnrealEditor...
 Using Visual Studio 2022 14.44.35220 toolchain (B:\VisualStudio2022\VC\Tools\MSVC\14.44.35207) and Windows 10.0.22621.0 SDK (C:\Program Files (x86)\Windows Kits\10).
@@ -24,7 +24,7 @@ Determining max actions to execute in parallel (8 physical cores, 16 logical cor
   Executing up to 8 processes, one per physical core
 Using Unreal Build Accelerator local executor to run 9 action(s)
   Storage capacity 40Gb
----- Starting trace: 251201_011203 ----
+---- Starting trace: 260114_210319 ----
 UbaServer - Listening on 0.0.0.0:1345
 [1/9] Compile [x64] Module.XAIEditor.cpp
 [2/9] Link [x64] UnrealEditor-XAIEditor.lib
@@ -32,16 +32,16 @@ UbaServer - Listening on 0.0.0.0:1345
 [4/9] Compile [x64] Module.XAI.2.cpp
 [5/9] Compile [x64] Module.XAI.3.cpp
 [6/9] Link [x64] UnrealEditor-XAI.lib
-[7/9] Link [x64] UnrealEditor-XAI.dll
-[8/9] Link [x64] UnrealEditor-XAIEditor.dll
+[7/9] Link [x64] UnrealEditor-XAIEditor.dll
+[8/9] Link [x64] UnrealEditor-XAI.dll
 [9/9] WriteMetadata UnrealEditor.target [NoUba]
 
-Trace written to file B:/UnrealEngineSource/UnrealEngine/Engine/Programs/AutomationTool/Saved/Logs/UBA-UnrealEditor-Win64-Development.uba with size 6.1kb
-Total time in Unreal Build Accelerator local executor: 19.40 seconds
+Trace written to file B:/UnrealEngineSource/UnrealEngine/Engine/Programs/AutomationTool/Saved/Logs/UBA-UnrealEditor-Win64-Development.uba with size 5.4kb
+Total time in Unreal Build Accelerator local executor: 12.44 seconds
 
 Result: Succeeded
-Total execution time: 52.45 seconds
-Took 52,86s to run dotnet.exe, ExitCode=0
+Total execution time: 26.15 seconds
+Took 26,55s to run dotnet.exe, ExitCode=0
 Building plugin for target platforms: Android, IOS, Linux, LinuxArm64, TVOS, Win64, VisionOS
 Running: B:\UnrealEngineSource\UnrealEngine\Engine\Binaries\ThirdParty\DotNet\8.0.412\win-x64\dotnet.exe "B:\UnrealEngineSource\UnrealEngine\Engine\Binaries\DotNET\UnrealBuildTool\UnrealBuildTool.dll" UnrealGame Win64 Development -Project="B:\Projects\XAIDemo\Builds\XAI\HostProject\HostProject.uproject" -plugin="B:\Projects\XAIDemo\Builds\XAI\HostProject\Plugins\XAI\XAI.uplugin" -noubtmakefiles -manifest="B:\Projects\XAIDemo\Builds\XAI\HostProject\Saved\Manifest-UnrealGame-Win64-Development.xml" -nohotreload -log="B:\UnrealEngineSource\UnrealEngine\Engine\Programs\AutomationTool\Saved\Logs\UBA-UnrealGame-Win64-Development.txt"
 Log file: B:\UnrealEngineSource\UnrealEngine\Engine\Programs\AutomationTool\Saved\Logs\UBA-UnrealGame-Win64-Development.txt
@@ -49,7 +49,7 @@ Using 'git status' to determine working set for adaptive non-unity build (B:\Unr
 UHT compiled-in object format Default
 Parsing headers for UnrealGame
   Running Internal UnrealHeaderTool B:\Projects\XAIDemo\Builds\XAI\HostProject\HostProject.uproject B:\Projects\XAIDemo\Builds\XAI\HostProject\Intermediate\Build\Win64\UnrealGame\Development\UnrealGame.uhtmanifest -WarningsAsErrors
-UHT processed UnrealGame in 7.6191153 seconds (30 files written)
+UHT processed UnrealGame in 1.1534613 seconds (30 files written)
 Writing manifest to B:\Projects\XAIDemo\Builds\XAI\HostProject\Saved\Manifest-UnrealGame-Win64-Development.xml
 Building UnrealGame...
 Using Visual Studio 2022 14.44.35220 toolchain (B:\VisualStudio2022\VC\Tools\MSVC\14.44.35207) and Windows 10.0.22621.0 SDK (C:\Program Files (x86)\Windows Kits\10).
@@ -58,25 +58,25 @@ Determining max actions to execute in parallel (8 physical cores, 16 logical cor
   Executing up to 8 processes, one per physical core
 Using Unreal Build Accelerator local executor to run 3 action(s)
   Storage capacity 40Gb
----- Starting trace: 251201_011234 ----
+---- Starting trace: 260114_210336 ----
 UbaSessionServer - Disable remote execution (remote sessions will finish current processes)
 [1/3] Compile [x64] Module.XAI.2.cpp
 [2/3] Compile [x64] Module.XAI.1.cpp
 [3/3] Compile [x64] Module.XAI.3.cpp
 
-Trace written to file B:/UnrealEngineSource/UnrealEngine/Engine/Programs/AutomationTool/Saved/Logs/UBA-UnrealGame-Win64-Development.uba with size 4.4kb
-Total time in Unreal Build Accelerator local executor: 21.23 seconds
+Trace written to file B:/UnrealEngineSource/UnrealEngine/Engine/Programs/AutomationTool/Saved/Logs/UBA-UnrealGame-Win64-Development.uba with size 4.1kb
+Total time in Unreal Build Accelerator local executor: 19.31 seconds
 
 Result: Succeeded
-Total execution time: 32.71 seconds
-Took 32,89s to run dotnet.exe, ExitCode=0
+Total execution time: 23.26 seconds
+Took 23,43s to run dotnet.exe, ExitCode=0
 Running: B:\UnrealEngineSource\UnrealEngine\Engine\Binaries\ThirdParty\DotNet\8.0.412\win-x64\dotnet.exe "B:\UnrealEngineSource\UnrealEngine\Engine\Binaries\DotNET\UnrealBuildTool\UnrealBuildTool.dll" UnrealGame Win64 Shipping -Project="B:\Projects\XAIDemo\Builds\XAI\HostProject\HostProject.uproject" -plugin="B:\Projects\XAIDemo\Builds\XAI\HostProject\Plugins\XAI\XAI.uplugin" -noubtmakefiles -manifest="B:\Projects\XAIDemo\Builds\XAI\HostProject\Saved\Manifest-UnrealGame-Win64-Shipping.xml" -nohotreload -log="B:\UnrealEngineSource\UnrealEngine\Engine\Programs\AutomationTool\Saved\Logs\UBA-UnrealGame-Win64-Shipping.txt"
 Log file: B:\UnrealEngineSource\UnrealEngine\Engine\Programs\AutomationTool\Saved\Logs\UBA-UnrealGame-Win64-Shipping.txt
 Using 'git status' to determine working set for adaptive non-unity build (B:\UnrealEngineSource\UnrealEngine).
 UHT compiled-in object format Default
 Parsing headers for UnrealGame
   Running Internal UnrealHeaderTool B:\Projects\XAIDemo\Builds\XAI\HostProject\HostProject.uproject B:\Projects\XAIDemo\Builds\XAI\HostProject\Intermediate\Build\Win64\UnrealGame\Shipping\UnrealGame.uhtmanifest -WarningsAsErrors
-UHT processed UnrealGame in 1.2746861 seconds (0 files written)
+UHT processed UnrealGame in 1.0245341 seconds (0 files written)
 Writing manifest to B:\Projects\XAIDemo\Builds\XAI\HostProject\Saved\Manifest-UnrealGame-Win64-Shipping.xml
 Building UnrealGame...
 Using Visual Studio 2022 14.44.35220 toolchain (B:\VisualStudio2022\VC\Tools\MSVC\14.44.35207) and Windows 10.0.22621.0 SDK (C:\Program Files (x86)\Windows Kits\10).
@@ -85,18 +85,18 @@ Determining max actions to execute in parallel (8 physical cores, 16 logical cor
   Executing up to 8 processes, one per physical core
 Using Unreal Build Accelerator local executor to run 3 action(s)
   Storage capacity 40Gb
----- Starting trace: 251201_011301 ----
+---- Starting trace: 260114_210359 ----
 UbaSessionServer - Disable remote execution (remote sessions will finish current processes)
 [1/3] Compile [x64] Module.XAI.2.cpp
 [2/3] Compile [x64] Module.XAI.1.cpp
 [3/3] Compile [x64] Module.XAI.3.cpp
 
-Trace written to file B:/UnrealEngineSource/UnrealEngine/Engine/Programs/AutomationTool/Saved/Logs/UBA-UnrealGame-Win64-Shipping.uba with size 4.6kb
-Total time in Unreal Build Accelerator local executor: 22.56 seconds
+Trace written to file B:/UnrealEngineSource/UnrealEngine/Engine/Programs/AutomationTool/Saved/Logs/UBA-UnrealGame-Win64-Shipping.uba with size 4.2kb
+Total time in Unreal Build Accelerator local executor: 19.29 seconds
 
 Result: Succeeded
-Total execution time: 27.49 seconds
-Took 27,68s to run dotnet.exe, ExitCode=0
+Total execution time: 23.03 seconds
+Took 23,21s to run dotnet.exe, ExitCode=0
 Reading filter rules from B:\Projects\XAIDemo\Builds\XAI\HostProject\Plugins\XAI\Config\FilterPlugin.ini
 Loading FilterPluginAndroid.ini
 Loading FilterPluginIOS.ini
@@ -106,5 +106,5 @@ Loading FilterPluginTVOS.ini
 Loading FilterPluginWin64.ini
 Loading FilterPluginVisionOS.ini
 BUILD SUCCESSFUL
-AutomationTool executed for 0h 1m 54s
+AutomationTool executed for 0h 1m 14s
 AutomationTool exiting with ExitCode=0 (Success)
