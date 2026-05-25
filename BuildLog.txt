@@ -3,25 +3,25 @@ Using bundled DotNet SDK version: 8.0.412 win-x64
 Starting AutomationTool...
 Parsing command line: BuildPlugin -Plugin=B:\Projects\XAIDemo\Plugins\XAI\XAI.uplugin -Package=B:\Projects\XAIDemo\Builds\XAI -Rocket -2019
 Initializing script modules...
-Total script module initialization time: 0.13 s.
+Total script module initialization time: 0.12 s.
 Using B:\VisualStudio\Community\MSBuild\Current\Bin\MSBuild.exe
 Executing commands...
-Copying 188 file(s) using max 64 thread(s)
+Copying 234 file(s) using max 64 thread(s)
 Reading plugin from B:\Projects\XAIDemo\Builds\XAI\HostProject\Plugins\XAI\XAI.uplugin...
 Building plugin for host platforms: Win64
 Running: B:\UnrealEngine\UE_5.7\Engine\Binaries\ThirdParty\DotNet\8.0.412\win-x64\dotnet.exe "B:\UnrealEngine\UE_5.7\Engine\Binaries\DotNET\UnrealBuildTool\UnrealBuildTool.dll" UnrealEditor Win64 Development -Project="B:\Projects\XAIDemo\Builds\XAI\HostProject\HostProject.uproject" -plugin="B:\Projects\XAIDemo\Builds\XAI\HostProject\Plugins\XAI\XAI.uplugin" -noubtmakefiles -manifest="B:\Projects\XAIDemo\Builds\XAI\HostProject\Saved\Manifest-UnrealEditor-Win64-Development.xml" -nohotreload -log="C:\Users\dexie\AppData\Roaming\Unreal Engine\AutomationTool\Logs\B+UnrealEngine+UE_5.7\UBA-UnrealEditor-Win64-Development.txt"
 Log file: C:\Users\dexie\AppData\Roaming\Unreal Engine\AutomationTool\Logs\B+UnrealEngine+UE_5.7\UBA-UnrealEditor-Win64-Development.txt
 Available x64 toolchains (1):
- * B:\VisualStudio\Community\VC\Tools\MSVC\14.50.35717
-    (Family=14.50.35717, FamilyRank=1, Version=14.50.35728, HostArchitecture=x64, ReleaseChannel=Latest, Architecture=x64)
-Visual Studio 2026 compiler version 14.50.35728 is not a preferred version. Please use the latest preferred version 14.44.35207
+ * B:\VisualStudio\Community\VC\Tools\MSVC\14.51.36231
+    (Family=14.51.36231, FamilyRank=1, Version=14.51.36244, HostArchitecture=x64, ReleaseChannel=Latest, Architecture=x64)
+Visual Studio 2026 compiler version 14.51.36244 is not a preferred version. Please use the latest preferred version 14.44.35207
 UHT compiled-in object format Default
 Parsing headers for UnrealEditor
   Running Internal UnrealHeaderTool B:\Projects\XAIDemo\Builds\XAI\HostProject\HostProject.uproject B:\Projects\XAIDemo\Builds\XAI\HostProject\Intermediate\Build\Win64\UnrealEditor\Development\UnrealEditor.uhtmanifest -WarningsAsErrors -installed
-UHT processed UnrealEditor in 1.8946754 seconds (50 files written)
+UHT processed UnrealEditor in 1.8549183 seconds (50 files written)
 Writing manifest to B:\Projects\XAIDemo\Builds\XAI\HostProject\Saved\Manifest-UnrealEditor-Win64-Development.xml
 Building UnrealEditor...
-Using Visual Studio 2026 14.50.35728 toolchain (B:\VisualStudio\Community\VC\Tools\MSVC\14.50.35717) and Windows 10.0.22621.0 SDK (C:\Program Files (x86)\Windows Kits\10).
+Using Visual Studio 2026 14.51.36244 toolchain (B:\VisualStudio\Community\VC\Tools\MSVC\14.51.36231) and Windows 10.0.22621.0 SDK (C:\Program Files (x86)\Windows Kits\10).
 Warning: Visual Studio 2026 compiler is not a preferred version
 [Adaptive Build] Excluded from XAI unity file: XAI.cpp, XAIActor.cpp, XAIAnimInstance.cpp, XAIFunctionLibrary.cpp, XAIGameViewportClient.cpp, XAIMovementComponent.cpp, XAINavigationQueryFilter.cpp, XAIProcessor.cpp, XAITaskObject.cpp, XAITickableTaskObject.cpp, XAIFollowToActorAsyncAction.cpp, XAIFollowToActorProcessor.cpp, XAIMoveToAsyncAction.cpp, XAIMoveToProcessor.cpp, XAISTT_DirectlyMoveInLocation.cpp, XAISTT_FollowToActor.cpp, XAISTT_GetRandomLocation.cpp, XAISTT_IsOnNavigation.cpp, XAISTT_MoveTo.cpp, XAISTT_ProjectPointToNavigation.cpp, XAISTT_SetEnableAvoidance.cpp, XAISTT_SetMaxFlySpeed.cpp, XAISTT_SetMaxWalkSpeed.cpp, XAISTT_SetOrientRotationToMovement.cpp
 [Adaptive Build] Excluded from XAIEditor unity file: XAIEditor.cpp, XAITracerVisualizer.cpp
@@ -29,11 +29,133 @@ Determining max actions to execute in parallel (8 physical cores, 16 logical cor
   Executing up to 8 processes, one per physical core
 Using Unreal Build Accelerator local executor to run 38 action(s)
   Storage capacity 40Gb
----- Starting trace: 260516_174457 ----
+---- Starting trace: 260526_012114 ----
 UbaServer - Listening on 0.0.0.0:1345
 [1/38] Resource Default.rc2
 [2/38] Resource Default.rc2
 [3/38] Compile [x64] SharedPCH.UnrealEd.Cpp20.cpp
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Core\Public\Serialization\Archive.h(780,15): warning C4996: 'FArchiveState::SetSerializeContext': SetSerializeContext is not supported. Remove calls to it. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual void SetSerializeContext(FUObjectSerializeContext* InLoadContext) {}
+	             ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Core\Public\Serialization\Archive.h(784,36): warning C4996: 'FArchiveState::GetSerializeContext': GetSerializeContext is not supported. Use FUObjectThreadContext::Get().GetSerializeContext(). - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual FUObjectSerializeContext* GetSerializeContext() { return nullptr; }
+	                                  ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\CoreUObject\Public\UObject\Class.h(4175,31): warning C4996: 'UObject::GetAssetRegistryTags': Implement the version that takes FAssetRegistryTagsContext instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	COREUOBJECT_API virtual void GetAssetRegistryTags(TArray<FAssetRegistryTag>& OutTags) const override;
+	                             ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\CoreUObject\Public\UObject\LinkerLoad.h(1597,52): warning C4996: 'FArchiveState::GetSerializeContext': GetSerializeContext is not supported. Use FUObjectThreadContext::Get().GetSerializeContext(). - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	COREUOBJECT_API virtual FUObjectSerializeContext* GetSerializeContext() override;
+	                                                  ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\CoreUObject\Public\UObject\ObjectRedirector.h(42,15): warning C4996: 'UObject::GetAssetRegistryTags': Implement the version that takes FAssetRegistryTagsContext instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual void GetAssetRegistryTags(TArray<FAssetRegistryTag>& OutTags) const override;
+	             ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Engine\Classes\Animation\AnimationAsset.h(1197,26): warning C4996: 'UObject::GetAssetRegistryTags': Implement the version that takes FAssetRegistryTagsContext instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	ENGINE_API virtual void GetAssetRegistryTags(TArray<FAssetRegistryTag>& OutTags) const override;
+	                        ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Engine\Classes\Engine\Blueprint.h(911,26): warning C4996: 'UObject::GetAssetRegistryTags': Implement the version that takes FAssetRegistryTagsContext instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	ENGINE_API virtual void GetAssetRegistryTags(TArray<FAssetRegistryTag>& OutTags) const override;
+	                        ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Engine\Classes\Engine\BlueprintGeneratedClass.h(592,26): warning C4996: 'UClass::GetAssetRegistryTags': Implement the version that takes FAssetRegistryTagsContext instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	ENGINE_API virtual void GetAssetRegistryTags(TArray<FAssetRegistryTag>& OutTags) const override;
+	                        ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Engine\Public\Animation\AnimCurveMetadata.h(211,15): warning C4996: 'UObject::GetAssetRegistryTags': Implement the version that takes FAssetRegistryTagsContext instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual void GetAssetRegistryTags(TArray<FAssetRegistryTag>& OutTags) const override;
+	             ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Engine\Classes\GameFramework\Actor.h(2383,26): warning C4996: 'UObject::GetAssetRegistryTags': Implement the version that takes FAssetRegistryTagsContext instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	ENGINE_API virtual void GetAssetRegistryTags(TArray<FAssetRegistryTag>& OutTags) const override;
+	                        ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Engine\Public\Subsystems\WorldSubsystem.h(85,26): warning C4996: 'FTickableObjectBase::IsAllowedToTick': Use IsTickable for conditional ticks and SetTickableTickType to change the tick type after initial registration - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	ENGINE_API virtual bool IsAllowedToTick() const override final;
+	                        ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Engine\Classes\Engine\World.h(3041,22): warning C4996: 'UObject::GetAssetRegistryTags': Implement the version that takes FAssetRegistryTagsContext instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	UE_API virtual void GetAssetRegistryTags(TArray<FAssetRegistryTag>& OutTags) const override;
+	                    ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Engine\Classes\Animation\AnimSequenceBase.h(155,26): warning C4996: 'UAnimationAsset::GetAssetRegistryTags': Implement the version that takes FAssetRegistryTagsContext instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	ENGINE_API virtual void GetAssetRegistryTags(TArray<FAssetRegistryTag>& OutTags) const override;
+	                        ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Engine\Classes\Animation\Skeleton.h(588,26): warning C4996: 'UObject::GetAssetRegistryTags': Implement the version that takes FAssetRegistryTagsContext instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	ENGINE_API virtual void GetAssetRegistryTags(TArray<FAssetRegistryTag>& OutTags) const override;
+	                        ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Engine\Public\Animation\AnimCompressionTypes.h(522,26): warning C4996: 'ICompressedAnimData::SerializeCompressedData': SerializeCompressedData now accepts the DataOwner as an argument - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	ENGINE_API virtual void SerializeCompressedData(class FArchive& Ar) override;
+	                        ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Engine\Classes\Animation\AnimSequence.h(390,26): warning C4996: 'UAnimSequenceBase::GetAssetRegistryTags': Implement the version that takes FAssetRegistryTagsContext instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	ENGINE_API virtual void GetAssetRegistryTags(TArray<FAssetRegistryTag>& OutTags) const override;
+	                        ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Engine\Classes\Curves\CurveBase.h(114,26): warning C4996: 'UObject::GetAssetRegistryTags': Implement the version that takes FAssetRegistryTagsContext instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	ENGINE_API virtual void GetAssetRegistryTags(TArray<FAssetRegistryTag>& OutTags) const override;
+	                        ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Engine\Classes\Curves\CurveFloat.h(48,53): warning C4996: 'UCurveBase::GetCurves': Use version taking a TAdderReserverRef - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	ENGINE_API virtual TArray<FRichCurveEditInfoConst> GetCurves() const override;
+	                                                   ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Engine\Classes\Components\SkeletalMeshComponent.h(2044,15): warning C4996: 'USkinnedMeshComponent::UpdateSlaveComponent': This method has been deprecated. Please use UpdateFollowerComponent instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual void UpdateSlaveComponent() override { UpdateFollowerComponent(); };
+	             ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Engine\Classes\Components\SkeletalMeshComponent.h(2052,26): warning C4996: 'USkinnedMeshComponent::SetSkeletalMesh': Use USkeletalMeshComponent::SetSkeletalMesh() or SetSkinnedAssetAndUpdate() instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	ENGINE_API virtual void SetSkeletalMesh(class USkeletalMesh* NewMesh, bool bReinitPose = true) override;  // SetSkeletalMesh may remain and become a UFUNCTION but lose its virtual after it is removed from the SkinnedMeshComponent API
+	                        ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Engine\Classes\EdGraph\EdGraphSchema.h(629,26): warning C4996: 'FGraphActionListBuilderBase::AddAction': Overriding the schema action category is no longer supported, set the category via CosmeticUpdateRootCategory or CosmeticUpdateCategory - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	ENGINE_API virtual void AddAction(const TSharedPtr<FEdGraphSchemaAction>& NewAction, FString const& Category) override;
+	                        ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Engine\Classes\EdGraph\EdGraphSchema.h(631,26): warning C4996: 'FGraphActionListBuilderBase::AddActionList': Collections of Action lists were ambiguous and unused - make a compound FEdGraphSchemaAction and Add it - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	ENGINE_API virtual void AddActionList(const TArray<TSharedPtr<FEdGraphSchemaAction> >& NewActions, FString const& Category = FString()) override;
+	                        ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Engine\Classes\Engine\ChildConnection.h(75,16): warning C4996: 'UNetConnection::IsNetReady': Replaced with a version that doesn't have a saturate option. Call Saturate() directly if passing true before. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual int32 IsNetReady(bool Saturate) override
+	              ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Engine\Classes\Engine\CurveTable.h(88,15): warning C4996: 'UObject::GetAssetRegistryTags': Implement the version that takes FAssetRegistryTagsContext instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual void GetAssetRegistryTags(TArray<FAssetRegistryTag>& OutTags) const override;
+	             ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Engine\Classes\Engine\DataTable.h(158,26): warning C4996: 'UObject::GetAssetRegistryTags': Implement the version that takes FAssetRegistryTagsContext instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	ENGINE_API virtual void GetAssetRegistryTags(TArray<FAssetRegistryTag>& OutTags) const override;
+	                        ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Engine\Classes\Engine\SkeletalMesh.h(2585,26): warning C4996: 'UObject::GetAssetRegistryTags': Implement the version that takes FAssetRegistryTagsContext instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	ENGINE_API virtual void GetAssetRegistryTags(TArray<FAssetRegistryTag>& OutTags) const override;
+	                        ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Engine\Classes\Engine\SkeletalMesh.h(2975,57): warning C4996: 'USkinnedAsset::GetLODInfoArray': Use GetLODInfo and GetLODNum instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	ENGINE_API virtual const TArray<FSkeletalMeshLODInfo>& GetLODInfoArray() const override;
+	                                                       ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Engine\Classes\Engine\SkeletalMesh.h(2969,51): warning C4996: 'USkinnedAsset::GetLODInfoArray': Use GetLODInfo and GetLODNum instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	ENGINE_API virtual TArray<FSkeletalMeshLODInfo>& GetLODInfoArray() override;
+	                                                 ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Engine\Classes\Engine\StaticMesh.h(1986,26): warning C4996: 'UObject::GetAssetRegistryTags': Implement the version that takes FAssetRegistryTagsContext instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	ENGINE_API virtual void GetAssetRegistryTags(TArray<FAssetRegistryTag>& OutTags) const override;
+	                        ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Engine\Classes\Engine\Texture.h(2010,26): warning C4996: 'UObject::GetAssetRegistryTags': Implement the version that takes FAssetRegistryTagsContext instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	ENGINE_API virtual void GetAssetRegistryTags(TArray<FAssetRegistryTag>& OutTags) const override;
+	                        ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Engine\Classes\Engine\Texture2D.h(125,15): warning C4996: 'UTexture::GetAssetRegistryTags': Implement the version that takes FAssetRegistryTagsContext instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual void GetAssetRegistryTags(TArray<FAssetRegistryTag>& OutTags) const override;
+	             ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Engine\Public\Materials\MaterialExpressionMaterialFunctionCall.h(125,51): warning C4996: 'UMaterialExpression::GetInputsView': Use FExpressionInputIterator instead or GetInput() directly. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	ENGINE_API virtual TArrayView<FExpressionInput*> GetInputsView() override;
+	                                                 ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Engine\Classes\Sound\SoundWave.h(1174,26): warning C4996: 'UObject::GetAssetRegistryTags': Implement the version that takes FAssetRegistryTagsContext instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	ENGINE_API virtual void GetAssetRegistryTags(TArray<FAssetRegistryTag>& OutTags) const override;
+	                        ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Experimental\Chaos\Public\Chaos\Box.h(104,17): warning C4996: 'Chaos::FImplicitObject::GetRadius': Please use GetRadiusf instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+		virtual FReal GetRadius() const override
+		              ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Experimental\Chaos\Public\Chaos\Box.h(104,17): note: the template instantiation context (the oldest one first) is
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Experimental\Chaos\Public\Chaos\GeometryParticles.h(151,8): note: while compiling class template 'Chaos::TGeometryParticlesImp'
+	class TGeometryParticlesImp : public TSimpleGeometryParticles<T, d>
+	      ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Experimental\Chaos\Public\Chaos\GeometryParticles.h(585,21): note: see reference to class template instantiation 'Chaos::TBox<Chaos::FReal,3>' being compiled
+				TBox<FReal, 3>::SerializeAsAABBs(Ar, MLocalBounds);
+				                ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Experimental\Chaos\Public\Chaos\ImplicitObjectTransformed.h(169,16): warning C4996: 'Chaos::FImplicitObject::GetMargin': Please use GetMarginf instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual FReal GetMargin() const override
+	              ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Experimental\Chaos\Public\Chaos\ImplicitObjectTransformed.h(169,16): note: the template instantiation context (the oldest one first) is
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Experimental\Chaos\Public\Chaos\ImplicitObjectTransformed.h(452,61): note: see reference to class template instantiation 'Chaos::TImplicitObjectTransformed<Chaos::FReal,3,true>' being compiled
+			TImplicitObjectTransformed<FReal, 3>* InnerTransformed = static_cast<TImplicitObjectTransformed<FReal, 3>*>(NewTransformed.GetReference());
+			                                                         ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Experimental\Chaos\Public\Chaos\ImplicitObjectTransformed.h(175,16): warning C4996: 'Chaos::FImplicitObject::GetRadius': Please use GetRadiusf instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual FReal GetRadius() const override
+	              ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Editor\UnrealEd\Public\Toolkits\AssetEditorToolkit.h(167,28): warning C4996: 'IAssetEditorInstance::CloseWindow': Use CloseWindow that takes in an EAssetEditorCloseReason instead - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	UNREALED_API virtual bool CloseWindow() override;
+	                          ^
 [4/38] Compile [x64] XAI.cpp
 [5/38] Compile [x64] XAIAnimInstance.cpp
 [6/38] Compile [x64] XAIGameViewportClient.cpp
@@ -53,17 +175,77 @@ UbaServer - Listening on 0.0.0.0:1345
 [20/38] Compile [x64] XAISTT_MoveTo.cpp
 [21/38] Compile [x64] XAISTT_SetMaxFlySpeed.cpp
 [22/38] Compile [x64] XAISTT_IsOnNavigation.cpp
-[23/38] Compile [x64] XAIFunctionLibrary.cpp
-[24/38] Compile [x64] XAITickableTaskObject.cpp
+[23/38] Compile [x64] XAITickableTaskObject.cpp
+[24/38] Compile [x64] XAIFunctionLibrary.cpp
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Experimental\Chaos\Public\Chaos\Sphere.h(74,17): warning C4996: 'Chaos::FImplicitObject::GetRadius': Please use GetRadiusf instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+		virtual FReal GetRadius() const override
+		              ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Experimental\Chaos\Public\Chaos\Sphere.h(74,17): note: the template instantiation context (the oldest one first) is
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Experimental\Chaos\Public\Chaos\Sphere.h(27,8): note: while compiling class template 'Chaos::TSphere'
+	class TSphere final : public FImplicitObject
+	      ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Experimental\Chaos\Public\Chaos\Sphere.h(337,41): note: see reference to class template instantiation 'Chaos::TSphere<Chaos::FReal,3>' being compiled
+			return Chaos::FImplicitObjectPtr(new FSphere(Center, GetRadiusf()));
+			                                     ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Experimental\Chaos\Public\Chaos\Convex.h(207,17): warning C4996: 'Chaos::FImplicitObject::GetMargin': Please use GetMarginf instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+		virtual FReal GetMargin() const override
+		              ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Experimental\Chaos\Public\Chaos\Convex.h(212,17): warning C4996: 'Chaos::FImplicitObject::GetRadius': Please use GetRadiusf instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+		virtual FReal GetRadius() const override
+		              ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Experimental\Chaos\Public\Chaos\Plane.h(42,16): warning C4996: 'Chaos::FImplicitObject::GetRadius': Please use GetRadiusf instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual FReal GetRadius() const override
+	              ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Experimental\Chaos\Public\Chaos\Plane.h(42,16): note: the template instantiation context (the oldest one first) is
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Experimental\Chaos\Public\Chaos\Convex.h(923,5): note: see reference to class template instantiation 'Chaos::TPlane<Chaos::FConvex::FRealType,3>' being compiled
+				Ar << TmpPlanes;
+				^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Experimental\Chaos\Public\Chaos\Box.h(104,17): warning C4996: 'Chaos::FImplicitObject::GetRadius': Please use GetRadiusf instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+		virtual FReal GetRadius() const override
+		              ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Experimental\Chaos\Public\Chaos\Box.h(104,17): note: the template instantiation context (the oldest one first) is
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Experimental\Chaos\Public\Chaos\Convex.h(963,23): note: see reference to class template instantiation 'Chaos::TBox<Chaos::FConvex::FRealType,3>' being compiled
+			TBox<FRealType,3>::SerializeAsAABB(Ar, LocalBoundingBox);
+			                   ^
 [25/38] Compile [x64] XAITaskObject.cpp
 [26/38] Compile [x64] Module.XAIEditor.cpp
 [27/38] Compile [x64] XAISTT_ProjectPointToNavigation.cpp
 [28/38] Compile [x64] XAITracerVisualizer.cpp
-[29/38] Compile [x64] XAISTT_SetMaxWalkSpeed.cpp
+[29/38] Compile [x64] XAISTT_SetEnableAvoidance.cpp
 [30/38] Compile [x64] XAIEditor.cpp
-[31/38] Compile [x64] XAISTT_SetEnableAvoidance.cpp
+[31/38] Compile [x64] XAISTT_SetMaxWalkSpeed.cpp
 [32/38] Link [x64] UnrealEditor-XAIEditor.lib
 [33/38] Compile [x64] XAIActor.cpp
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Experimental\Chaos\Public\Chaos\Sphere.h(74,17): warning C4996: 'Chaos::FImplicitObject::GetRadius': Please use GetRadiusf instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+		virtual FReal GetRadius() const override
+		              ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Experimental\Chaos\Public\Chaos\Sphere.h(74,17): note: the template instantiation context (the oldest one first) is
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Experimental\Chaos\Public\Chaos\Sphere.h(27,8): note: while compiling class template 'Chaos::TSphere'
+	class TSphere final : public FImplicitObject
+	      ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Experimental\Chaos\Public\Chaos\Sphere.h(337,41): note: see reference to class template instantiation 'Chaos::TSphere<Chaos::FReal,3>' being compiled
+			return Chaos::FImplicitObjectPtr(new FSphere(Center, GetRadiusf()));
+			                                     ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Experimental\Chaos\Public\Chaos\Convex.h(207,17): warning C4996: 'Chaos::FImplicitObject::GetMargin': Please use GetMarginf instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+		virtual FReal GetMargin() const override
+		              ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Experimental\Chaos\Public\Chaos\Convex.h(212,17): warning C4996: 'Chaos::FImplicitObject::GetRadius': Please use GetRadiusf instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+		virtual FReal GetRadius() const override
+		              ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Experimental\Chaos\Public\Chaos\Plane.h(42,16): warning C4996: 'Chaos::FImplicitObject::GetRadius': Please use GetRadiusf instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual FReal GetRadius() const override
+	              ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Experimental\Chaos\Public\Chaos\Plane.h(42,16): note: the template instantiation context (the oldest one first) is
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Experimental\Chaos\Public\Chaos\Convex.h(923,5): note: see reference to class template instantiation 'Chaos::TPlane<Chaos::FConvex::FRealType,3>' being compiled
+				Ar << TmpPlanes;
+				^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Experimental\Chaos\Public\Chaos\Box.h(104,17): warning C4996: 'Chaos::FImplicitObject::GetRadius': Please use GetRadiusf instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+		virtual FReal GetRadius() const override
+		              ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Experimental\Chaos\Public\Chaos\Box.h(104,17): note: the template instantiation context (the oldest one first) is
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Experimental\Chaos\Public\Chaos\Convex.h(963,23): note: see reference to class template instantiation 'Chaos::TBox<Chaos::FConvex::FRealType,3>' being compiled
+			TBox<FRealType,3>::SerializeAsAABB(Ar, LocalBoundingBox);
+			                   ^
 [34/38] Compile [x64] XAISTT_SetOrientRotationToMovement.cpp
 [35/38] Link [x64] UnrealEditor-XAI.lib
 [36/38] Link [x64] UnrealEditor-XAIEditor.dll
@@ -71,124 +253,1016 @@ UbaServer - Listening on 0.0.0.0:1345
 [38/38] WriteMetadata UnrealEditor.target [NoUba]
 
 Trace written to file C:/Users/dexie/AppData/Roaming/Unreal Engine/AutomationTool/Logs/B+UnrealEngine+UE_5.7/UBA-UnrealEditor-Win64-Development.uba with size 14.3kb
-Total time in Unreal Build Accelerator local executor: 41.66 seconds
+Total time in Unreal Build Accelerator local executor: 43.43 seconds
 
 Result: Succeeded
-Total execution time: 76.44 seconds
-Took 76,68s to run dotnet.exe, ExitCode=0
+Total execution time: 51.84 seconds
+Took 52,08s to run dotnet.exe, ExitCode=0
 Building plugin for target platforms: Win64
 Running: B:\UnrealEngine\UE_5.7\Engine\Binaries\ThirdParty\DotNet\8.0.412\win-x64\dotnet.exe "B:\UnrealEngine\UE_5.7\Engine\Binaries\DotNET\UnrealBuildTool\UnrealBuildTool.dll" UnrealGame Win64 Development -Project="B:\Projects\XAIDemo\Builds\XAI\HostProject\HostProject.uproject" -plugin="B:\Projects\XAIDemo\Builds\XAI\HostProject\Plugins\XAI\XAI.uplugin" -noubtmakefiles -manifest="B:\Projects\XAIDemo\Builds\XAI\HostProject\Saved\Manifest-UnrealGame-Win64-Development.xml" -nohotreload -log="C:\Users\dexie\AppData\Roaming\Unreal Engine\AutomationTool\Logs\B+UnrealEngine+UE_5.7\UBA-UnrealGame-Win64-Development.txt"
 Log file: C:\Users\dexie\AppData\Roaming\Unreal Engine\AutomationTool\Logs\B+UnrealEngine+UE_5.7\UBA-UnrealGame-Win64-Development.txt
 Available x64 toolchains (1):
- * B:\VisualStudio\Community\VC\Tools\MSVC\14.50.35717
-    (Family=14.50.35717, FamilyRank=1, Version=14.50.35728, HostArchitecture=x64, ReleaseChannel=Latest, Architecture=x64)
-Visual Studio 2026 compiler version 14.50.35728 is not a preferred version. Please use the latest preferred version 14.44.35207
+ * B:\VisualStudio\Community\VC\Tools\MSVC\14.51.36231
+    (Family=14.51.36231, FamilyRank=1, Version=14.51.36244, HostArchitecture=x64, ReleaseChannel=Latest, Architecture=x64)
+Visual Studio 2026 compiler version 14.51.36244 is not a preferred version. Please use the latest preferred version 14.44.35207
 UHT compiled-in object format Default
 Parsing headers for UnrealGame
   Running Internal UnrealHeaderTool B:\Projects\XAIDemo\Builds\XAI\HostProject\HostProject.uproject B:\Projects\XAIDemo\Builds\XAI\HostProject\Intermediate\Build\Win64\UnrealGame\Development\UnrealGame.uhtmanifest -WarningsAsErrors -installed
-UHT processed UnrealGame in 1.010063 seconds (50 files written)
+UHT processed UnrealGame in 0.9855826 seconds (50 files written)
 Writing manifest to B:\Projects\XAIDemo\Builds\XAI\HostProject\Saved\Manifest-UnrealGame-Win64-Development.xml
 Building UnrealGame...
-Using Visual Studio 2026 14.50.35728 toolchain (B:\VisualStudio\Community\VC\Tools\MSVC\14.50.35717) and Windows 10.0.22621.0 SDK (C:\Program Files (x86)\Windows Kits\10).
+Using Visual Studio 2026 14.51.36244 toolchain (B:\VisualStudio\Community\VC\Tools\MSVC\14.51.36231) and Windows 10.0.22621.0 SDK (C:\Program Files (x86)\Windows Kits\10).
 Warning: Visual Studio 2026 compiler is not a preferred version
 [Adaptive Build] Excluded from XAI unity file: XAI.cpp, XAIActor.cpp, XAIAnimInstance.cpp, XAIFunctionLibrary.cpp, XAIGameViewportClient.cpp, XAIMovementComponent.cpp, XAINavigationQueryFilter.cpp, XAIProcessor.cpp, XAITaskObject.cpp, XAITickableTaskObject.cpp, XAIFollowToActorAsyncAction.cpp, XAIFollowToActorProcessor.cpp, XAIMoveToAsyncAction.cpp, XAIMoveToProcessor.cpp, XAISTT_DirectlyMoveInLocation.cpp, XAISTT_FollowToActor.cpp, XAISTT_GetRandomLocation.cpp, XAISTT_IsOnNavigation.cpp, XAISTT_MoveTo.cpp, XAISTT_ProjectPointToNavigation.cpp, XAISTT_SetEnableAvoidance.cpp, XAISTT_SetMaxFlySpeed.cpp, XAISTT_SetMaxWalkSpeed.cpp, XAISTT_SetOrientRotationToMovement.cpp
 Determining max actions to execute in parallel (8 physical cores, 16 logical cores)
   Executing up to 8 processes, one per physical core
 Using Unreal Build Accelerator local executor to run 27 action(s)
   Storage capacity 40Gb
----- Starting trace: 260516_174544 ----
+---- Starting trace: 260526_012201 ----
 UbaServer - Listening on 0.0.0.0:1345
 [1/27] Compile [x64] XAI.cpp
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Core\Public\Serialization\Archive.h(780,15): warning C4996: 'FArchiveState::SetSerializeContext': SetSerializeContext is not supported. Remove calls to it. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual void SetSerializeContext(FUObjectSerializeContext* InLoadContext) {}
+	             ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Core\Public\Serialization\Archive.h(784,36): warning C4996: 'FArchiveState::GetSerializeContext': GetSerializeContext is not supported. Use FUObjectThreadContext::Get().GetSerializeContext(). - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual FUObjectSerializeContext* GetSerializeContext() { return nullptr; }
+	                                  ^
 [2/27] Compile [x64] Module.XAI.3.cpp
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Core\Public\Serialization\Archive.h(780,15): warning C4996: 'FArchiveState::SetSerializeContext': SetSerializeContext is not supported. Remove calls to it. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual void SetSerializeContext(FUObjectSerializeContext* InLoadContext) {}
+	             ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Core\Public\Serialization\Archive.h(784,36): warning C4996: 'FArchiveState::GetSerializeContext': GetSerializeContext is not supported. Use FUObjectThreadContext::Get().GetSerializeContext(). - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual FUObjectSerializeContext* GetSerializeContext() { return nullptr; }
+	                                  ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\CoreUObject\Public\UObject\Class.h(4175,31): warning C4996: 'UObject::GetAssetRegistryTags': Implement the version that takes FAssetRegistryTagsContext instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	COREUOBJECT_API virtual void GetAssetRegistryTags(TArray<FAssetRegistryTag>& OutTags) const override;
+	                             ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\CoreUObject\Public\UObject\ObjectRedirector.h(42,15): warning C4996: 'UObject::GetAssetRegistryTags': Implement the version that takes FAssetRegistryTagsContext instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual void GetAssetRegistryTags(TArray<FAssetRegistryTag>& OutTags) const override;
+	             ^
 [3/27] Compile [x64] XAIFollowToActorAsyncAction.cpp
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Core\Public\Serialization\Archive.h(780,15): warning C4996: 'FArchiveState::SetSerializeContext': SetSerializeContext is not supported. Remove calls to it. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual void SetSerializeContext(FUObjectSerializeContext* InLoadContext) {}
+	             ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Core\Public\Serialization\Archive.h(784,36): warning C4996: 'FArchiveState::GetSerializeContext': GetSerializeContext is not supported. Use FUObjectThreadContext::Get().GetSerializeContext(). - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual FUObjectSerializeContext* GetSerializeContext() { return nullptr; }
+	                                  ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\CoreUObject\Public\UObject\Class.h(4175,31): warning C4996: 'UObject::GetAssetRegistryTags': Implement the version that takes FAssetRegistryTagsContext instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	COREUOBJECT_API virtual void GetAssetRegistryTags(TArray<FAssetRegistryTag>& OutTags) const override;
+	                             ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Engine\Public\Subsystems\WorldSubsystem.h(85,26): warning C4996: 'FTickableObjectBase::IsAllowedToTick': Use IsTickable for conditional ticks and SetTickableTickType to change the tick type after initial registration - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	ENGINE_API virtual bool IsAllowedToTick() const override final;
+	                        ^
 [4/27] Compile [x64] XAIAnimInstance.cpp
-[5/27] Compile [x64] Module.XAI.2.cpp
-[6/27] Compile [x64] XAIFollowToActorProcessor.cpp
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Core\Public\Serialization\Archive.h(780,15): warning C4996: 'FArchiveState::SetSerializeContext': SetSerializeContext is not supported. Remove calls to it. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual void SetSerializeContext(FUObjectSerializeContext* InLoadContext) {}
+	             ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Core\Public\Serialization\Archive.h(784,36): warning C4996: 'FArchiveState::GetSerializeContext': GetSerializeContext is not supported. Use FUObjectThreadContext::Get().GetSerializeContext(). - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual FUObjectSerializeContext* GetSerializeContext() { return nullptr; }
+	                                  ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\CoreUObject\Public\UObject\Class.h(4175,31): warning C4996: 'UObject::GetAssetRegistryTags': Implement the version that takes FAssetRegistryTagsContext instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	COREUOBJECT_API virtual void GetAssetRegistryTags(TArray<FAssetRegistryTag>& OutTags) const override;
+	                             ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Engine\Public\Subsystems\WorldSubsystem.h(85,26): warning C4996: 'FTickableObjectBase::IsAllowedToTick': Use IsTickable for conditional ticks and SetTickableTickType to change the tick type after initial registration - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	ENGINE_API virtual bool IsAllowedToTick() const override final;
+	                        ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Engine\Classes\Curves\CurveFloat.h(48,53): warning C4996: 'UCurveBase::GetCurves': Use version taking a TAdderReserverRef - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	ENGINE_API virtual TArray<FRichCurveEditInfoConst> GetCurves() const override;
+	                                                   ^
+[5/27] Compile [x64] XAIFollowToActorProcessor.cpp
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Core\Public\Serialization\Archive.h(780,15): warning C4996: 'FArchiveState::SetSerializeContext': SetSerializeContext is not supported. Remove calls to it. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual void SetSerializeContext(FUObjectSerializeContext* InLoadContext) {}
+	             ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Core\Public\Serialization\Archive.h(784,36): warning C4996: 'FArchiveState::GetSerializeContext': GetSerializeContext is not supported. Use FUObjectThreadContext::Get().GetSerializeContext(). - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual FUObjectSerializeContext* GetSerializeContext() { return nullptr; }
+	                                  ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\CoreUObject\Public\UObject\Class.h(4175,31): warning C4996: 'UObject::GetAssetRegistryTags': Implement the version that takes FAssetRegistryTagsContext instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	COREUOBJECT_API virtual void GetAssetRegistryTags(TArray<FAssetRegistryTag>& OutTags) const override;
+	                             ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Engine\Public\Subsystems\WorldSubsystem.h(85,26): warning C4996: 'FTickableObjectBase::IsAllowedToTick': Use IsTickable for conditional ticks and SetTickableTickType to change the tick type after initial registration - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	ENGINE_API virtual bool IsAllowedToTick() const override final;
+	                        ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Engine\Classes\Curves\CurveFloat.h(48,53): warning C4996: 'UCurveBase::GetCurves': Use version taking a TAdderReserverRef - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	ENGINE_API virtual TArray<FRichCurveEditInfoConst> GetCurves() const override;
+	                                                   ^
+[6/27] Compile [x64] Module.XAI.2.cpp
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Core\Public\Serialization\Archive.h(780,15): warning C4996: 'FArchiveState::SetSerializeContext': SetSerializeContext is not supported. Remove calls to it. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual void SetSerializeContext(FUObjectSerializeContext* InLoadContext) {}
+	             ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Core\Public\Serialization\Archive.h(784,36): warning C4996: 'FArchiveState::GetSerializeContext': GetSerializeContext is not supported. Use FUObjectThreadContext::Get().GetSerializeContext(). - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual FUObjectSerializeContext* GetSerializeContext() { return nullptr; }
+	                                  ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\CoreUObject\Public\UObject\Class.h(4175,31): warning C4996: 'UObject::GetAssetRegistryTags': Implement the version that takes FAssetRegistryTagsContext instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	COREUOBJECT_API virtual void GetAssetRegistryTags(TArray<FAssetRegistryTag>& OutTags) const override;
+	                             ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Engine\Public\Subsystems\WorldSubsystem.h(85,26): warning C4996: 'FTickableObjectBase::IsAllowedToTick': Use IsTickable for conditional ticks and SetTickableTickType to change the tick type after initial registration - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	ENGINE_API virtual bool IsAllowedToTick() const override final;
+	                        ^
 [7/27] Compile [x64] Module.XAI.1.cpp
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Core\Public\Serialization\Archive.h(780,15): warning C4996: 'FArchiveState::SetSerializeContext': SetSerializeContext is not supported. Remove calls to it. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual void SetSerializeContext(FUObjectSerializeContext* InLoadContext) {}
+	             ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Core\Public\Serialization\Archive.h(784,36): warning C4996: 'FArchiveState::GetSerializeContext': GetSerializeContext is not supported. Use FUObjectThreadContext::Get().GetSerializeContext(). - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual FUObjectSerializeContext* GetSerializeContext() { return nullptr; }
+	                                  ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\CoreUObject\Public\UObject\Class.h(4175,31): warning C4996: 'UObject::GetAssetRegistryTags': Implement the version that takes FAssetRegistryTagsContext instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	COREUOBJECT_API virtual void GetAssetRegistryTags(TArray<FAssetRegistryTag>& OutTags) const override;
+	                             ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Engine\Public\Subsystems\WorldSubsystem.h(85,26): warning C4996: 'FTickableObjectBase::IsAllowedToTick': Use IsTickable for conditional ticks and SetTickableTickType to change the tick type after initial registration - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	ENGINE_API virtual bool IsAllowedToTick() const override final;
+	                        ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Engine\Classes\Components\SkeletalMeshComponent.h(2044,15): warning C4996: 'USkinnedMeshComponent::UpdateSlaveComponent': This method has been deprecated. Please use UpdateFollowerComponent instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual void UpdateSlaveComponent() override { UpdateFollowerComponent(); };
+	             ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Engine\Classes\Components\SkeletalMeshComponent.h(2052,26): warning C4996: 'USkinnedMeshComponent::SetSkeletalMesh': Use USkeletalMeshComponent::SetSkeletalMesh() or SetSkinnedAssetAndUpdate() instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	ENGINE_API virtual void SetSkeletalMesh(class USkeletalMesh* NewMesh, bool bReinitPose = true) override;  // SetSkeletalMesh may remain and become a UFUNCTION but lose its virtual after it is removed from the SkinnedMeshComponent API
+	                        ^
 [8/27] Compile [x64] XAIGameViewportClient.cpp
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Core\Public\Serialization\Archive.h(780,15): warning C4996: 'FArchiveState::SetSerializeContext': SetSerializeContext is not supported. Remove calls to it. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual void SetSerializeContext(FUObjectSerializeContext* InLoadContext) {}
+	             ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Core\Public\Serialization\Archive.h(784,36): warning C4996: 'FArchiveState::GetSerializeContext': GetSerializeContext is not supported. Use FUObjectThreadContext::Get().GetSerializeContext(). - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual FUObjectSerializeContext* GetSerializeContext() { return nullptr; }
+	                                  ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\CoreUObject\Public\UObject\Class.h(4175,31): warning C4996: 'UObject::GetAssetRegistryTags': Implement the version that takes FAssetRegistryTagsContext instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	COREUOBJECT_API virtual void GetAssetRegistryTags(TArray<FAssetRegistryTag>& OutTags) const override;
+	                             ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Engine\Public\Subsystems\WorldSubsystem.h(85,26): warning C4996: 'FTickableObjectBase::IsAllowedToTick': Use IsTickable for conditional ticks and SetTickableTickType to change the tick type after initial registration - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	ENGINE_API virtual bool IsAllowedToTick() const override final;
+	                        ^
 [9/27] Compile [x64] XAINavigationQueryFilter.cpp
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Core\Public\Serialization\Archive.h(780,15): warning C4996: 'FArchiveState::SetSerializeContext': SetSerializeContext is not supported. Remove calls to it. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual void SetSerializeContext(FUObjectSerializeContext* InLoadContext) {}
+	             ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Core\Public\Serialization\Archive.h(784,36): warning C4996: 'FArchiveState::GetSerializeContext': GetSerializeContext is not supported. Use FUObjectThreadContext::Get().GetSerializeContext(). - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual FUObjectSerializeContext* GetSerializeContext() { return nullptr; }
+	                                  ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\CoreUObject\Public\UObject\Class.h(4175,31): warning C4996: 'UObject::GetAssetRegistryTags': Implement the version that takes FAssetRegistryTagsContext instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	COREUOBJECT_API virtual void GetAssetRegistryTags(TArray<FAssetRegistryTag>& OutTags) const override;
+	                             ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Engine\Public\Subsystems\WorldSubsystem.h(85,26): warning C4996: 'FTickableObjectBase::IsAllowedToTick': Use IsTickable for conditional ticks and SetTickableTickType to change the tick type after initial registration - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	ENGINE_API virtual bool IsAllowedToTick() const override final;
+	                        ^
 [10/27] Compile [x64] XAIMoveToAsyncAction.cpp
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Core\Public\Serialization\Archive.h(780,15): warning C4996: 'FArchiveState::SetSerializeContext': SetSerializeContext is not supported. Remove calls to it. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual void SetSerializeContext(FUObjectSerializeContext* InLoadContext) {}
+	             ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Core\Public\Serialization\Archive.h(784,36): warning C4996: 'FArchiveState::GetSerializeContext': GetSerializeContext is not supported. Use FUObjectThreadContext::Get().GetSerializeContext(). - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual FUObjectSerializeContext* GetSerializeContext() { return nullptr; }
+	                                  ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\CoreUObject\Public\UObject\Class.h(4175,31): warning C4996: 'UObject::GetAssetRegistryTags': Implement the version that takes FAssetRegistryTagsContext instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	COREUOBJECT_API virtual void GetAssetRegistryTags(TArray<FAssetRegistryTag>& OutTags) const override;
+	                             ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Engine\Public\Subsystems\WorldSubsystem.h(85,26): warning C4996: 'FTickableObjectBase::IsAllowedToTick': Use IsTickable for conditional ticks and SetTickableTickType to change the tick type after initial registration - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	ENGINE_API virtual bool IsAllowedToTick() const override final;
+	                        ^
 [11/27] Compile [x64] XAIMoveToProcessor.cpp
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Core\Public\Serialization\Archive.h(780,15): warning C4996: 'FArchiveState::SetSerializeContext': SetSerializeContext is not supported. Remove calls to it. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual void SetSerializeContext(FUObjectSerializeContext* InLoadContext) {}
+	             ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Core\Public\Serialization\Archive.h(784,36): warning C4996: 'FArchiveState::GetSerializeContext': GetSerializeContext is not supported. Use FUObjectThreadContext::Get().GetSerializeContext(). - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual FUObjectSerializeContext* GetSerializeContext() { return nullptr; }
+	                                  ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\CoreUObject\Public\UObject\Class.h(4175,31): warning C4996: 'UObject::GetAssetRegistryTags': Implement the version that takes FAssetRegistryTagsContext instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	COREUOBJECT_API virtual void GetAssetRegistryTags(TArray<FAssetRegistryTag>& OutTags) const override;
+	                             ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Engine\Public\Subsystems\WorldSubsystem.h(85,26): warning C4996: 'FTickableObjectBase::IsAllowedToTick': Use IsTickable for conditional ticks and SetTickableTickType to change the tick type after initial registration - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	ENGINE_API virtual bool IsAllowedToTick() const override final;
+	                        ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Engine\Classes\Curves\CurveFloat.h(48,53): warning C4996: 'UCurveBase::GetCurves': Use version taking a TAdderReserverRef - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	ENGINE_API virtual TArray<FRichCurveEditInfoConst> GetCurves() const override;
+	                                                   ^
 [12/27] Compile [x64] XAIMovementComponent.cpp
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Core\Public\Serialization\Archive.h(780,15): warning C4996: 'FArchiveState::SetSerializeContext': SetSerializeContext is not supported. Remove calls to it. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual void SetSerializeContext(FUObjectSerializeContext* InLoadContext) {}
+	             ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Core\Public\Serialization\Archive.h(784,36): warning C4996: 'FArchiveState::GetSerializeContext': GetSerializeContext is not supported. Use FUObjectThreadContext::Get().GetSerializeContext(). - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual FUObjectSerializeContext* GetSerializeContext() { return nullptr; }
+	                                  ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\CoreUObject\Public\UObject\Class.h(4175,31): warning C4996: 'UObject::GetAssetRegistryTags': Implement the version that takes FAssetRegistryTagsContext instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	COREUOBJECT_API virtual void GetAssetRegistryTags(TArray<FAssetRegistryTag>& OutTags) const override;
+	                             ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Engine\Public\Subsystems\WorldSubsystem.h(85,26): warning C4996: 'FTickableObjectBase::IsAllowedToTick': Use IsTickable for conditional ticks and SetTickableTickType to change the tick type after initial registration - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	ENGINE_API virtual bool IsAllowedToTick() const override final;
+	                        ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Engine\Classes\Components\SkeletalMeshComponent.h(2044,15): warning C4996: 'USkinnedMeshComponent::UpdateSlaveComponent': This method has been deprecated. Please use UpdateFollowerComponent instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual void UpdateSlaveComponent() override { UpdateFollowerComponent(); };
+	             ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Engine\Classes\Components\SkeletalMeshComponent.h(2052,26): warning C4996: 'USkinnedMeshComponent::SetSkeletalMesh': Use USkeletalMeshComponent::SetSkeletalMesh() or SetSkinnedAssetAndUpdate() instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	ENGINE_API virtual void SetSkeletalMesh(class USkeletalMesh* NewMesh, bool bReinitPose = true) override;  // SetSkeletalMesh may remain and become a UFUNCTION but lose its virtual after it is removed from the SkinnedMeshComponent API
+	                        ^
 [13/27] Compile [x64] XAIFunctionLibrary.cpp
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Core\Public\Serialization\Archive.h(780,15): warning C4996: 'FArchiveState::SetSerializeContext': SetSerializeContext is not supported. Remove calls to it. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual void SetSerializeContext(FUObjectSerializeContext* InLoadContext) {}
+	             ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Core\Public\Serialization\Archive.h(784,36): warning C4996: 'FArchiveState::GetSerializeContext': GetSerializeContext is not supported. Use FUObjectThreadContext::Get().GetSerializeContext(). - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual FUObjectSerializeContext* GetSerializeContext() { return nullptr; }
+	                                  ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\CoreUObject\Public\UObject\Class.h(4175,31): warning C4996: 'UObject::GetAssetRegistryTags': Implement the version that takes FAssetRegistryTagsContext instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	COREUOBJECT_API virtual void GetAssetRegistryTags(TArray<FAssetRegistryTag>& OutTags) const override;
+	                             ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Experimental\Chaos\Public\Chaos\Box.h(104,17): warning C4996: 'Chaos::FImplicitObject::GetRadius': Please use GetRadiusf instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+		virtual FReal GetRadius() const override
+		              ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Experimental\Chaos\Public\Chaos\Box.h(104,17): note: the template instantiation context (the oldest one first) is
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Experimental\Chaos\Public\Chaos\GeometryParticles.h(151,8): note: while compiling class template 'Chaos::TGeometryParticlesImp'
+	class TGeometryParticlesImp : public TSimpleGeometryParticles<T, d>
+	      ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Experimental\Chaos\Public\Chaos\GeometryParticles.h(585,21): note: see reference to class template instantiation 'Chaos::TBox<Chaos::FReal,3>' being compiled
+				TBox<FReal, 3>::SerializeAsAABBs(Ar, MLocalBounds);
+				                ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Experimental\Chaos\Public\Chaos\ImplicitObjectTransformed.h(169,16): warning C4996: 'Chaos::FImplicitObject::GetMargin': Please use GetMarginf instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual FReal GetMargin() const override
+	              ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Experimental\Chaos\Public\Chaos\ImplicitObjectTransformed.h(169,16): note: the template instantiation context (the oldest one first) is
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Experimental\Chaos\Public\Chaos\ImplicitObjectTransformed.h(452,61): note: see reference to class template instantiation 'Chaos::TImplicitObjectTransformed<Chaos::FReal,3,true>' being compiled
+			TImplicitObjectTransformed<FReal, 3>* InnerTransformed = static_cast<TImplicitObjectTransformed<FReal, 3>*>(NewTransformed.GetReference());
+			                                                         ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Experimental\Chaos\Public\Chaos\ImplicitObjectTransformed.h(175,16): warning C4996: 'Chaos::FImplicitObject::GetRadius': Please use GetRadiusf instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual FReal GetRadius() const override
+	              ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Experimental\Chaos\Public\Chaos\Sphere.h(74,17): warning C4996: 'Chaos::FImplicitObject::GetRadius': Please use GetRadiusf instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+		virtual FReal GetRadius() const override
+		              ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Experimental\Chaos\Public\Chaos\Sphere.h(74,17): note: the template instantiation context (the oldest one first) is
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Experimental\Chaos\Public\Chaos\Sphere.h(27,8): note: while compiling class template 'Chaos::TSphere'
+	class TSphere final : public FImplicitObject
+	      ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Experimental\Chaos\Public\Chaos\Sphere.h(337,41): note: see reference to class template instantiation 'Chaos::TSphere<Chaos::FReal,3>' being compiled
+			return Chaos::FImplicitObjectPtr(new FSphere(Center, GetRadiusf()));
+			                                     ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Experimental\Chaos\Public\Chaos\Convex.h(207,17): warning C4996: 'Chaos::FImplicitObject::GetMargin': Please use GetMarginf instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+		virtual FReal GetMargin() const override
+		              ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Experimental\Chaos\Public\Chaos\Convex.h(212,17): warning C4996: 'Chaos::FImplicitObject::GetRadius': Please use GetRadiusf instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+		virtual FReal GetRadius() const override
+		              ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Experimental\Chaos\Public\Chaos\Plane.h(42,16): warning C4996: 'Chaos::FImplicitObject::GetRadius': Please use GetRadiusf instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual FReal GetRadius() const override
+	              ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Experimental\Chaos\Public\Chaos\Plane.h(42,16): note: the template instantiation context (the oldest one first) is
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Experimental\Chaos\Public\Chaos\Convex.h(923,5): note: see reference to class template instantiation 'Chaos::TPlane<Chaos::FConvex::FRealType,3>' being compiled
+				Ar << TmpPlanes;
+				^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Engine\Classes\Curves\CurveFloat.h(48,53): warning C4996: 'UCurveBase::GetCurves': Use version taking a TAdderReserverRef - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	ENGINE_API virtual TArray<FRichCurveEditInfoConst> GetCurves() const override;
+	                                                   ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Engine\Public\Subsystems\WorldSubsystem.h(85,26): warning C4996: 'FTickableObjectBase::IsAllowedToTick': Use IsTickable for conditional ticks and SetTickableTickType to change the tick type after initial registration - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	ENGINE_API virtual bool IsAllowedToTick() const override final;
+	                        ^
 [14/27] Compile [x64] XAIActor.cpp
-[15/27] Compile [x64] XAIProcessor.cpp
-[16/27] Compile [x64] XAISTT_DirectlyMoveInLocation.cpp
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Core\Public\Serialization\Archive.h(780,15): warning C4996: 'FArchiveState::SetSerializeContext': SetSerializeContext is not supported. Remove calls to it. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual void SetSerializeContext(FUObjectSerializeContext* InLoadContext) {}
+	             ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Core\Public\Serialization\Archive.h(784,36): warning C4996: 'FArchiveState::GetSerializeContext': GetSerializeContext is not supported. Use FUObjectThreadContext::Get().GetSerializeContext(). - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual FUObjectSerializeContext* GetSerializeContext() { return nullptr; }
+	                                  ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\CoreUObject\Public\UObject\Class.h(4175,31): warning C4996: 'UObject::GetAssetRegistryTags': Implement the version that takes FAssetRegistryTagsContext instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	COREUOBJECT_API virtual void GetAssetRegistryTags(TArray<FAssetRegistryTag>& OutTags) const override;
+	                             ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Engine\Public\Subsystems\WorldSubsystem.h(85,26): warning C4996: 'FTickableObjectBase::IsAllowedToTick': Use IsTickable for conditional ticks and SetTickableTickType to change the tick type after initial registration - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	ENGINE_API virtual bool IsAllowedToTick() const override final;
+	                        ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\CoreUObject\Public\UObject\ObjectRedirector.h(42,15): warning C4996: 'UObject::GetAssetRegistryTags': Implement the version that takes FAssetRegistryTagsContext instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual void GetAssetRegistryTags(TArray<FAssetRegistryTag>& OutTags) const override;
+	             ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Engine\Classes\Components\SkeletalMeshComponent.h(2044,15): warning C4996: 'USkinnedMeshComponent::UpdateSlaveComponent': This method has been deprecated. Please use UpdateFollowerComponent instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual void UpdateSlaveComponent() override { UpdateFollowerComponent(); };
+	             ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Engine\Classes\Components\SkeletalMeshComponent.h(2052,26): warning C4996: 'USkinnedMeshComponent::SetSkeletalMesh': Use USkeletalMeshComponent::SetSkeletalMesh() or SetSkinnedAssetAndUpdate() instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	ENGINE_API virtual void SetSkeletalMesh(class USkeletalMesh* NewMesh, bool bReinitPose = true) override;  // SetSkeletalMesh may remain and become a UFUNCTION but lose its virtual after it is removed from the SkinnedMeshComponent API
+	                        ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Engine\Classes\Curves\CurveFloat.h(48,53): warning C4996: 'UCurveBase::GetCurves': Use version taking a TAdderReserverRef - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	ENGINE_API virtual TArray<FRichCurveEditInfoConst> GetCurves() const override;
+	                                                   ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Experimental\Chaos\Public\Chaos\Box.h(104,17): warning C4996: 'Chaos::FImplicitObject::GetRadius': Please use GetRadiusf instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+		virtual FReal GetRadius() const override
+		              ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Experimental\Chaos\Public\Chaos\Box.h(104,17): note: the template instantiation context (the oldest one first) is
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Experimental\Chaos\Public\Chaos\GeometryParticles.h(151,8): note: while compiling class template 'Chaos::TGeometryParticlesImp'
+	class TGeometryParticlesImp : public TSimpleGeometryParticles<T, d>
+	      ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Experimental\Chaos\Public\Chaos\GeometryParticles.h(585,21): note: see reference to class template instantiation 'Chaos::TBox<Chaos::FReal,3>' being compiled
+				TBox<FReal, 3>::SerializeAsAABBs(Ar, MLocalBounds);
+				                ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Experimental\Chaos\Public\Chaos\ImplicitObjectTransformed.h(169,16): warning C4996: 'Chaos::FImplicitObject::GetMargin': Please use GetMarginf instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual FReal GetMargin() const override
+	              ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Experimental\Chaos\Public\Chaos\ImplicitObjectTransformed.h(169,16): note: the template instantiation context (the oldest one first) is
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Experimental\Chaos\Public\Chaos\ImplicitObjectTransformed.h(452,61): note: see reference to class template instantiation 'Chaos::TImplicitObjectTransformed<Chaos::FReal,3,true>' being compiled
+			TImplicitObjectTransformed<FReal, 3>* InnerTransformed = static_cast<TImplicitObjectTransformed<FReal, 3>*>(NewTransformed.GetReference());
+			                                                         ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Experimental\Chaos\Public\Chaos\ImplicitObjectTransformed.h(175,16): warning C4996: 'Chaos::FImplicitObject::GetRadius': Please use GetRadiusf instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual FReal GetRadius() const override
+	              ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Experimental\Chaos\Public\Chaos\Sphere.h(74,17): warning C4996: 'Chaos::FImplicitObject::GetRadius': Please use GetRadiusf instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+		virtual FReal GetRadius() const override
+		              ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Experimental\Chaos\Public\Chaos\Sphere.h(74,17): note: the template instantiation context (the oldest one first) is
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Experimental\Chaos\Public\Chaos\Sphere.h(27,8): note: while compiling class template 'Chaos::TSphere'
+	class TSphere final : public FImplicitObject
+	      ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Experimental\Chaos\Public\Chaos\Sphere.h(337,41): note: see reference to class template instantiation 'Chaos::TSphere<Chaos::FReal,3>' being compiled
+			return Chaos::FImplicitObjectPtr(new FSphere(Center, GetRadiusf()));
+			                                     ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Experimental\Chaos\Public\Chaos\Convex.h(207,17): warning C4996: 'Chaos::FImplicitObject::GetMargin': Please use GetMarginf instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+		virtual FReal GetMargin() const override
+		              ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Experimental\Chaos\Public\Chaos\Convex.h(212,17): warning C4996: 'Chaos::FImplicitObject::GetRadius': Please use GetRadiusf instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+		virtual FReal GetRadius() const override
+		              ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Experimental\Chaos\Public\Chaos\Plane.h(42,16): warning C4996: 'Chaos::FImplicitObject::GetRadius': Please use GetRadiusf instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual FReal GetRadius() const override
+	              ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Experimental\Chaos\Public\Chaos\Plane.h(42,16): note: the template instantiation context (the oldest one first) is
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Experimental\Chaos\Public\Chaos\Convex.h(923,5): note: see reference to class template instantiation 'Chaos::TPlane<Chaos::FConvex::FRealType,3>' being compiled
+				Ar << TmpPlanes;
+				^
+[15/27] Compile [x64] XAISTT_DirectlyMoveInLocation.cpp
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Core\Public\Serialization\Archive.h(780,15): warning C4996: 'FArchiveState::SetSerializeContext': SetSerializeContext is not supported. Remove calls to it. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual void SetSerializeContext(FUObjectSerializeContext* InLoadContext) {}
+	             ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Core\Public\Serialization\Archive.h(784,36): warning C4996: 'FArchiveState::GetSerializeContext': GetSerializeContext is not supported. Use FUObjectThreadContext::Get().GetSerializeContext(). - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual FUObjectSerializeContext* GetSerializeContext() { return nullptr; }
+	                                  ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\CoreUObject\Public\UObject\Class.h(4175,31): warning C4996: 'UObject::GetAssetRegistryTags': Implement the version that takes FAssetRegistryTagsContext instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	COREUOBJECT_API virtual void GetAssetRegistryTags(TArray<FAssetRegistryTag>& OutTags) const override;
+	                             ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Engine\Public\Subsystems\WorldSubsystem.h(85,26): warning C4996: 'FTickableObjectBase::IsAllowedToTick': Use IsTickable for conditional ticks and SetTickableTickType to change the tick type after initial registration - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	ENGINE_API virtual bool IsAllowedToTick() const override final;
+	                        ^
+[16/27] Compile [x64] XAIProcessor.cpp
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Core\Public\Serialization\Archive.h(780,15): warning C4996: 'FArchiveState::SetSerializeContext': SetSerializeContext is not supported. Remove calls to it. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual void SetSerializeContext(FUObjectSerializeContext* InLoadContext) {}
+	             ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Core\Public\Serialization\Archive.h(784,36): warning C4996: 'FArchiveState::GetSerializeContext': GetSerializeContext is not supported. Use FUObjectThreadContext::Get().GetSerializeContext(). - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual FUObjectSerializeContext* GetSerializeContext() { return nullptr; }
+	                                  ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\CoreUObject\Public\UObject\Class.h(4175,31): warning C4996: 'UObject::GetAssetRegistryTags': Implement the version that takes FAssetRegistryTagsContext instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	COREUOBJECT_API virtual void GetAssetRegistryTags(TArray<FAssetRegistryTag>& OutTags) const override;
+	                             ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Engine\Public\Subsystems\WorldSubsystem.h(85,26): warning C4996: 'FTickableObjectBase::IsAllowedToTick': Use IsTickable for conditional ticks and SetTickableTickType to change the tick type after initial registration - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	ENGINE_API virtual bool IsAllowedToTick() const override final;
+	                        ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Engine\Classes\Curves\CurveFloat.h(48,53): warning C4996: 'UCurveBase::GetCurves': Use version taking a TAdderReserverRef - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	ENGINE_API virtual TArray<FRichCurveEditInfoConst> GetCurves() const override;
+	                                                   ^
 [17/27] Compile [x64] XAISTT_FollowToActor.cpp
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Core\Public\Serialization\Archive.h(780,15): warning C4996: 'FArchiveState::SetSerializeContext': SetSerializeContext is not supported. Remove calls to it. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual void SetSerializeContext(FUObjectSerializeContext* InLoadContext) {}
+	             ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Core\Public\Serialization\Archive.h(784,36): warning C4996: 'FArchiveState::GetSerializeContext': GetSerializeContext is not supported. Use FUObjectThreadContext::Get().GetSerializeContext(). - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual FUObjectSerializeContext* GetSerializeContext() { return nullptr; }
+	                                  ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\CoreUObject\Public\UObject\Class.h(4175,31): warning C4996: 'UObject::GetAssetRegistryTags': Implement the version that takes FAssetRegistryTagsContext instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	COREUOBJECT_API virtual void GetAssetRegistryTags(TArray<FAssetRegistryTag>& OutTags) const override;
+	                             ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Engine\Public\Subsystems\WorldSubsystem.h(85,26): warning C4996: 'FTickableObjectBase::IsAllowedToTick': Use IsTickable for conditional ticks and SetTickableTickType to change the tick type after initial registration - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	ENGINE_API virtual bool IsAllowedToTick() const override final;
+	                        ^
 [18/27] Compile [x64] XAISTT_GetRandomLocation.cpp
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Core\Public\Serialization\Archive.h(780,15): warning C4996: 'FArchiveState::SetSerializeContext': SetSerializeContext is not supported. Remove calls to it. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual void SetSerializeContext(FUObjectSerializeContext* InLoadContext) {}
+	             ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Core\Public\Serialization\Archive.h(784,36): warning C4996: 'FArchiveState::GetSerializeContext': GetSerializeContext is not supported. Use FUObjectThreadContext::Get().GetSerializeContext(). - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual FUObjectSerializeContext* GetSerializeContext() { return nullptr; }
+	                                  ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\CoreUObject\Public\UObject\Class.h(4175,31): warning C4996: 'UObject::GetAssetRegistryTags': Implement the version that takes FAssetRegistryTagsContext instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	COREUOBJECT_API virtual void GetAssetRegistryTags(TArray<FAssetRegistryTag>& OutTags) const override;
+	                             ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Engine\Public\Subsystems\WorldSubsystem.h(85,26): warning C4996: 'FTickableObjectBase::IsAllowedToTick': Use IsTickable for conditional ticks and SetTickableTickType to change the tick type after initial registration - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	ENGINE_API virtual bool IsAllowedToTick() const override final;
+	                        ^
 [19/27] Compile [x64] XAISTT_MoveTo.cpp
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Core\Public\Serialization\Archive.h(780,15): warning C4996: 'FArchiveState::SetSerializeContext': SetSerializeContext is not supported. Remove calls to it. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual void SetSerializeContext(FUObjectSerializeContext* InLoadContext) {}
+	             ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Core\Public\Serialization\Archive.h(784,36): warning C4996: 'FArchiveState::GetSerializeContext': GetSerializeContext is not supported. Use FUObjectThreadContext::Get().GetSerializeContext(). - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual FUObjectSerializeContext* GetSerializeContext() { return nullptr; }
+	                                  ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\CoreUObject\Public\UObject\Class.h(4175,31): warning C4996: 'UObject::GetAssetRegistryTags': Implement the version that takes FAssetRegistryTagsContext instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	COREUOBJECT_API virtual void GetAssetRegistryTags(TArray<FAssetRegistryTag>& OutTags) const override;
+	                             ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Engine\Public\Subsystems\WorldSubsystem.h(85,26): warning C4996: 'FTickableObjectBase::IsAllowedToTick': Use IsTickable for conditional ticks and SetTickableTickType to change the tick type after initial registration - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	ENGINE_API virtual bool IsAllowedToTick() const override final;
+	                        ^
 [20/27] Compile [x64] XAISTT_ProjectPointToNavigation.cpp
-[21/27] Compile [x64] XAISTT_IsOnNavigation.cpp
-[22/27] Compile [x64] XAISTT_SetEnableAvoidance.cpp
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Core\Public\Serialization\Archive.h(780,15): warning C4996: 'FArchiveState::SetSerializeContext': SetSerializeContext is not supported. Remove calls to it. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual void SetSerializeContext(FUObjectSerializeContext* InLoadContext) {}
+	             ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Core\Public\Serialization\Archive.h(784,36): warning C4996: 'FArchiveState::GetSerializeContext': GetSerializeContext is not supported. Use FUObjectThreadContext::Get().GetSerializeContext(). - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual FUObjectSerializeContext* GetSerializeContext() { return nullptr; }
+	                                  ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\CoreUObject\Public\UObject\Class.h(4175,31): warning C4996: 'UObject::GetAssetRegistryTags': Implement the version that takes FAssetRegistryTagsContext instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	COREUOBJECT_API virtual void GetAssetRegistryTags(TArray<FAssetRegistryTag>& OutTags) const override;
+	                             ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Engine\Public\Subsystems\WorldSubsystem.h(85,26): warning C4996: 'FTickableObjectBase::IsAllowedToTick': Use IsTickable for conditional ticks and SetTickableTickType to change the tick type after initial registration - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	ENGINE_API virtual bool IsAllowedToTick() const override final;
+	                        ^
+[21/27] Compile [x64] XAISTT_SetEnableAvoidance.cpp
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Core\Public\Serialization\Archive.h(780,15): warning C4996: 'FArchiveState::SetSerializeContext': SetSerializeContext is not supported. Remove calls to it. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual void SetSerializeContext(FUObjectSerializeContext* InLoadContext) {}
+	             ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Core\Public\Serialization\Archive.h(784,36): warning C4996: 'FArchiveState::GetSerializeContext': GetSerializeContext is not supported. Use FUObjectThreadContext::Get().GetSerializeContext(). - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual FUObjectSerializeContext* GetSerializeContext() { return nullptr; }
+	                                  ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\CoreUObject\Public\UObject\Class.h(4175,31): warning C4996: 'UObject::GetAssetRegistryTags': Implement the version that takes FAssetRegistryTagsContext instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	COREUOBJECT_API virtual void GetAssetRegistryTags(TArray<FAssetRegistryTag>& OutTags) const override;
+	                             ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Engine\Public\Subsystems\WorldSubsystem.h(85,26): warning C4996: 'FTickableObjectBase::IsAllowedToTick': Use IsTickable for conditional ticks and SetTickableTickType to change the tick type after initial registration - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	ENGINE_API virtual bool IsAllowedToTick() const override final;
+	                        ^
+[22/27] Compile [x64] XAISTT_IsOnNavigation.cpp
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Core\Public\Serialization\Archive.h(780,15): warning C4996: 'FArchiveState::SetSerializeContext': SetSerializeContext is not supported. Remove calls to it. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual void SetSerializeContext(FUObjectSerializeContext* InLoadContext) {}
+	             ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Core\Public\Serialization\Archive.h(784,36): warning C4996: 'FArchiveState::GetSerializeContext': GetSerializeContext is not supported. Use FUObjectThreadContext::Get().GetSerializeContext(). - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual FUObjectSerializeContext* GetSerializeContext() { return nullptr; }
+	                                  ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\CoreUObject\Public\UObject\Class.h(4175,31): warning C4996: 'UObject::GetAssetRegistryTags': Implement the version that takes FAssetRegistryTagsContext instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	COREUOBJECT_API virtual void GetAssetRegistryTags(TArray<FAssetRegistryTag>& OutTags) const override;
+	                             ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Engine\Public\Subsystems\WorldSubsystem.h(85,26): warning C4996: 'FTickableObjectBase::IsAllowedToTick': Use IsTickable for conditional ticks and SetTickableTickType to change the tick type after initial registration - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	ENGINE_API virtual bool IsAllowedToTick() const override final;
+	                        ^
 [23/27] Compile [x64] XAISTT_SetMaxFlySpeed.cpp
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Core\Public\Serialization\Archive.h(780,15): warning C4996: 'FArchiveState::SetSerializeContext': SetSerializeContext is not supported. Remove calls to it. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual void SetSerializeContext(FUObjectSerializeContext* InLoadContext) {}
+	             ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Core\Public\Serialization\Archive.h(784,36): warning C4996: 'FArchiveState::GetSerializeContext': GetSerializeContext is not supported. Use FUObjectThreadContext::Get().GetSerializeContext(). - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual FUObjectSerializeContext* GetSerializeContext() { return nullptr; }
+	                                  ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\CoreUObject\Public\UObject\Class.h(4175,31): warning C4996: 'UObject::GetAssetRegistryTags': Implement the version that takes FAssetRegistryTagsContext instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	COREUOBJECT_API virtual void GetAssetRegistryTags(TArray<FAssetRegistryTag>& OutTags) const override;
+	                             ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Engine\Public\Subsystems\WorldSubsystem.h(85,26): warning C4996: 'FTickableObjectBase::IsAllowedToTick': Use IsTickable for conditional ticks and SetTickableTickType to change the tick type after initial registration - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	ENGINE_API virtual bool IsAllowedToTick() const override final;
+	                        ^
 [24/27] Compile [x64] XAISTT_SetMaxWalkSpeed.cpp
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Core\Public\Serialization\Archive.h(780,15): warning C4996: 'FArchiveState::SetSerializeContext': SetSerializeContext is not supported. Remove calls to it. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual void SetSerializeContext(FUObjectSerializeContext* InLoadContext) {}
+	             ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Core\Public\Serialization\Archive.h(784,36): warning C4996: 'FArchiveState::GetSerializeContext': GetSerializeContext is not supported. Use FUObjectThreadContext::Get().GetSerializeContext(). - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual FUObjectSerializeContext* GetSerializeContext() { return nullptr; }
+	                                  ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\CoreUObject\Public\UObject\Class.h(4175,31): warning C4996: 'UObject::GetAssetRegistryTags': Implement the version that takes FAssetRegistryTagsContext instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	COREUOBJECT_API virtual void GetAssetRegistryTags(TArray<FAssetRegistryTag>& OutTags) const override;
+	                             ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Engine\Public\Subsystems\WorldSubsystem.h(85,26): warning C4996: 'FTickableObjectBase::IsAllowedToTick': Use IsTickable for conditional ticks and SetTickableTickType to change the tick type after initial registration - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	ENGINE_API virtual bool IsAllowedToTick() const override final;
+	                        ^
 [25/27] Compile [x64] XAITickableTaskObject.cpp
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Core\Public\Serialization\Archive.h(780,15): warning C4996: 'FArchiveState::SetSerializeContext': SetSerializeContext is not supported. Remove calls to it. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual void SetSerializeContext(FUObjectSerializeContext* InLoadContext) {}
+	             ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Core\Public\Serialization\Archive.h(784,36): warning C4996: 'FArchiveState::GetSerializeContext': GetSerializeContext is not supported. Use FUObjectThreadContext::Get().GetSerializeContext(). - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual FUObjectSerializeContext* GetSerializeContext() { return nullptr; }
+	                                  ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\CoreUObject\Public\UObject\Class.h(4175,31): warning C4996: 'UObject::GetAssetRegistryTags': Implement the version that takes FAssetRegistryTagsContext instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	COREUOBJECT_API virtual void GetAssetRegistryTags(TArray<FAssetRegistryTag>& OutTags) const override;
+	                             ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\CoreUObject\Public\UObject\ObjectRedirector.h(42,15): warning C4996: 'UObject::GetAssetRegistryTags': Implement the version that takes FAssetRegistryTagsContext instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual void GetAssetRegistryTags(TArray<FAssetRegistryTag>& OutTags) const override;
+	             ^
 [26/27] Compile [x64] XAISTT_SetOrientRotationToMovement.cpp
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Core\Public\Serialization\Archive.h(780,15): warning C4996: 'FArchiveState::SetSerializeContext': SetSerializeContext is not supported. Remove calls to it. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual void SetSerializeContext(FUObjectSerializeContext* InLoadContext) {}
+	             ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Core\Public\Serialization\Archive.h(784,36): warning C4996: 'FArchiveState::GetSerializeContext': GetSerializeContext is not supported. Use FUObjectThreadContext::Get().GetSerializeContext(). - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual FUObjectSerializeContext* GetSerializeContext() { return nullptr; }
+	                                  ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\CoreUObject\Public\UObject\Class.h(4175,31): warning C4996: 'UObject::GetAssetRegistryTags': Implement the version that takes FAssetRegistryTagsContext instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	COREUOBJECT_API virtual void GetAssetRegistryTags(TArray<FAssetRegistryTag>& OutTags) const override;
+	                             ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Engine\Public\Subsystems\WorldSubsystem.h(85,26): warning C4996: 'FTickableObjectBase::IsAllowedToTick': Use IsTickable for conditional ticks and SetTickableTickType to change the tick type after initial registration - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	ENGINE_API virtual bool IsAllowedToTick() const override final;
+	                        ^
 [27/27] Compile [x64] XAITaskObject.cpp
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Core\Public\Serialization\Archive.h(780,15): warning C4996: 'FArchiveState::SetSerializeContext': SetSerializeContext is not supported. Remove calls to it. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual void SetSerializeContext(FUObjectSerializeContext* InLoadContext) {}
+	             ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Core\Public\Serialization\Archive.h(784,36): warning C4996: 'FArchiveState::GetSerializeContext': GetSerializeContext is not supported. Use FUObjectThreadContext::Get().GetSerializeContext(). - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual FUObjectSerializeContext* GetSerializeContext() { return nullptr; }
+	                                  ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\CoreUObject\Public\UObject\Class.h(4175,31): warning C4996: 'UObject::GetAssetRegistryTags': Implement the version that takes FAssetRegistryTagsContext instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	COREUOBJECT_API virtual void GetAssetRegistryTags(TArray<FAssetRegistryTag>& OutTags) const override;
+	                             ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\CoreUObject\Public\UObject\ObjectRedirector.h(42,15): warning C4996: 'UObject::GetAssetRegistryTags': Implement the version that takes FAssetRegistryTagsContext instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual void GetAssetRegistryTags(TArray<FAssetRegistryTag>& OutTags) const override;
+	             ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Engine\Public\Subsystems\WorldSubsystem.h(85,26): warning C4996: 'FTickableObjectBase::IsAllowedToTick': Use IsTickable for conditional ticks and SetTickableTickType to change the tick type after initial registration - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	ENGINE_API virtual bool IsAllowedToTick() const override final;
+	                        ^
 
-Trace written to file C:/Users/dexie/AppData/Roaming/Unreal Engine/AutomationTool/Logs/B+UnrealEngine+UE_5.7/UBA-UnrealGame-Win64-Development.uba with size 10.8kb
-Total time in Unreal Build Accelerator local executor: 30.13 seconds
+Trace written to file C:/Users/dexie/AppData/Roaming/Unreal Engine/AutomationTool/Logs/B+UnrealEngine+UE_5.7/UBA-UnrealGame-Win64-Development.uba with size 11.0kb
+Total time in Unreal Build Accelerator local executor: 33.38 seconds
 
 Result: Succeeded
-Total execution time: 34.55 seconds
-Took 34,69s to run dotnet.exe, ExitCode=0
+Total execution time: 36.44 seconds
+Took 36,59s to run dotnet.exe, ExitCode=0
 Running: B:\UnrealEngine\UE_5.7\Engine\Binaries\ThirdParty\DotNet\8.0.412\win-x64\dotnet.exe "B:\UnrealEngine\UE_5.7\Engine\Binaries\DotNET\UnrealBuildTool\UnrealBuildTool.dll" UnrealGame Win64 Shipping -Project="B:\Projects\XAIDemo\Builds\XAI\HostProject\HostProject.uproject" -plugin="B:\Projects\XAIDemo\Builds\XAI\HostProject\Plugins\XAI\XAI.uplugin" -noubtmakefiles -manifest="B:\Projects\XAIDemo\Builds\XAI\HostProject\Saved\Manifest-UnrealGame-Win64-Shipping.xml" -nohotreload -log="C:\Users\dexie\AppData\Roaming\Unreal Engine\AutomationTool\Logs\B+UnrealEngine+UE_5.7\UBA-UnrealGame-Win64-Shipping.txt"
 Log file: C:\Users\dexie\AppData\Roaming\Unreal Engine\AutomationTool\Logs\B+UnrealEngine+UE_5.7\UBA-UnrealGame-Win64-Shipping.txt
 Available x64 toolchains (1):
- * B:\VisualStudio\Community\VC\Tools\MSVC\14.50.35717
-    (Family=14.50.35717, FamilyRank=1, Version=14.50.35728, HostArchitecture=x64, ReleaseChannel=Latest, Architecture=x64)
-Visual Studio 2026 compiler version 14.50.35728 is not a preferred version. Please use the latest preferred version 14.44.35207
+ * B:\VisualStudio\Community\VC\Tools\MSVC\14.51.36231
+    (Family=14.51.36231, FamilyRank=1, Version=14.51.36244, HostArchitecture=x64, ReleaseChannel=Latest, Architecture=x64)
+Visual Studio 2026 compiler version 14.51.36244 is not a preferred version. Please use the latest preferred version 14.44.35207
 UHT compiled-in object format Default
 Parsing headers for UnrealGame
   Running Internal UnrealHeaderTool B:\Projects\XAIDemo\Builds\XAI\HostProject\HostProject.uproject B:\Projects\XAIDemo\Builds\XAI\HostProject\Intermediate\Build\Win64\UnrealGame\Shipping\UnrealGame.uhtmanifest -WarningsAsErrors -installed
-UHT processed UnrealGame in 0.9549427 seconds (0 files written)
+UHT processed UnrealGame in 0.9656453 seconds (0 files written)
 Writing manifest to B:\Projects\XAIDemo\Builds\XAI\HostProject\Saved\Manifest-UnrealGame-Win64-Shipping.xml
 Building UnrealGame...
-Using Visual Studio 2026 14.50.35728 toolchain (B:\VisualStudio\Community\VC\Tools\MSVC\14.50.35717) and Windows 10.0.22621.0 SDK (C:\Program Files (x86)\Windows Kits\10).
+Using Visual Studio 2026 14.51.36244 toolchain (B:\VisualStudio\Community\VC\Tools\MSVC\14.51.36231) and Windows 10.0.22621.0 SDK (C:\Program Files (x86)\Windows Kits\10).
 Warning: Visual Studio 2026 compiler is not a preferred version
 [Adaptive Build] Excluded from XAI unity file: XAI.cpp, XAIActor.cpp, XAIAnimInstance.cpp, XAIFunctionLibrary.cpp, XAIGameViewportClient.cpp, XAIMovementComponent.cpp, XAINavigationQueryFilter.cpp, XAIProcessor.cpp, XAITaskObject.cpp, XAITickableTaskObject.cpp, XAIFollowToActorAsyncAction.cpp, XAIFollowToActorProcessor.cpp, XAIMoveToAsyncAction.cpp, XAIMoveToProcessor.cpp, XAISTT_DirectlyMoveInLocation.cpp, XAISTT_FollowToActor.cpp, XAISTT_GetRandomLocation.cpp, XAISTT_IsOnNavigation.cpp, XAISTT_MoveTo.cpp, XAISTT_ProjectPointToNavigation.cpp, XAISTT_SetEnableAvoidance.cpp, XAISTT_SetMaxFlySpeed.cpp, XAISTT_SetMaxWalkSpeed.cpp, XAISTT_SetOrientRotationToMovement.cpp
 Determining max actions to execute in parallel (8 physical cores, 16 logical cores)
   Executing up to 8 processes, one per physical core
 Using Unreal Build Accelerator local executor to run 27 action(s)
   Storage capacity 40Gb
----- Starting trace: 260516_174617 ----
+---- Starting trace: 260526_012238 ----
 UbaServer - Listening on 0.0.0.0:1345
 [1/27] Compile [x64] XAI.cpp
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Core\Public\Serialization\Archive.h(780,15): warning C4996: 'FArchiveState::SetSerializeContext': SetSerializeContext is not supported. Remove calls to it. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual void SetSerializeContext(FUObjectSerializeContext* InLoadContext) {}
+	             ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Core\Public\Serialization\Archive.h(784,36): warning C4996: 'FArchiveState::GetSerializeContext': GetSerializeContext is not supported. Use FUObjectThreadContext::Get().GetSerializeContext(). - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual FUObjectSerializeContext* GetSerializeContext() { return nullptr; }
+	                                  ^
 [2/27] Compile [x64] Module.XAI.3.cpp
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Core\Public\Serialization\Archive.h(780,15): warning C4996: 'FArchiveState::SetSerializeContext': SetSerializeContext is not supported. Remove calls to it. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual void SetSerializeContext(FUObjectSerializeContext* InLoadContext) {}
+	             ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Core\Public\Serialization\Archive.h(784,36): warning C4996: 'FArchiveState::GetSerializeContext': GetSerializeContext is not supported. Use FUObjectThreadContext::Get().GetSerializeContext(). - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual FUObjectSerializeContext* GetSerializeContext() { return nullptr; }
+	                                  ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\CoreUObject\Public\UObject\Class.h(4175,31): warning C4996: 'UObject::GetAssetRegistryTags': Implement the version that takes FAssetRegistryTagsContext instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	COREUOBJECT_API virtual void GetAssetRegistryTags(TArray<FAssetRegistryTag>& OutTags) const override;
+	                             ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\CoreUObject\Public\UObject\ObjectRedirector.h(42,15): warning C4996: 'UObject::GetAssetRegistryTags': Implement the version that takes FAssetRegistryTagsContext instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual void GetAssetRegistryTags(TArray<FAssetRegistryTag>& OutTags) const override;
+	             ^
 [3/27] Compile [x64] XAIFollowToActorAsyncAction.cpp
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Core\Public\Serialization\Archive.h(780,15): warning C4996: 'FArchiveState::SetSerializeContext': SetSerializeContext is not supported. Remove calls to it. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual void SetSerializeContext(FUObjectSerializeContext* InLoadContext) {}
+	             ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Core\Public\Serialization\Archive.h(784,36): warning C4996: 'FArchiveState::GetSerializeContext': GetSerializeContext is not supported. Use FUObjectThreadContext::Get().GetSerializeContext(). - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual FUObjectSerializeContext* GetSerializeContext() { return nullptr; }
+	                                  ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\CoreUObject\Public\UObject\Class.h(4175,31): warning C4996: 'UObject::GetAssetRegistryTags': Implement the version that takes FAssetRegistryTagsContext instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	COREUOBJECT_API virtual void GetAssetRegistryTags(TArray<FAssetRegistryTag>& OutTags) const override;
+	                             ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Engine\Public\Subsystems\WorldSubsystem.h(85,26): warning C4996: 'FTickableObjectBase::IsAllowedToTick': Use IsTickable for conditional ticks and SetTickableTickType to change the tick type after initial registration - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	ENGINE_API virtual bool IsAllowedToTick() const override final;
+	                        ^
 [4/27] Compile [x64] XAIAnimInstance.cpp
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Core\Public\Serialization\Archive.h(780,15): warning C4996: 'FArchiveState::SetSerializeContext': SetSerializeContext is not supported. Remove calls to it. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual void SetSerializeContext(FUObjectSerializeContext* InLoadContext) {}
+	             ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Core\Public\Serialization\Archive.h(784,36): warning C4996: 'FArchiveState::GetSerializeContext': GetSerializeContext is not supported. Use FUObjectThreadContext::Get().GetSerializeContext(). - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual FUObjectSerializeContext* GetSerializeContext() { return nullptr; }
+	                                  ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\CoreUObject\Public\UObject\Class.h(4175,31): warning C4996: 'UObject::GetAssetRegistryTags': Implement the version that takes FAssetRegistryTagsContext instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	COREUOBJECT_API virtual void GetAssetRegistryTags(TArray<FAssetRegistryTag>& OutTags) const override;
+	                             ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Engine\Public\Subsystems\WorldSubsystem.h(85,26): warning C4996: 'FTickableObjectBase::IsAllowedToTick': Use IsTickable for conditional ticks and SetTickableTickType to change the tick type after initial registration - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	ENGINE_API virtual bool IsAllowedToTick() const override final;
+	                        ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Engine\Classes\Curves\CurveFloat.h(48,53): warning C4996: 'UCurveBase::GetCurves': Use version taking a TAdderReserverRef - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	ENGINE_API virtual TArray<FRichCurveEditInfoConst> GetCurves() const override;
+	                                                   ^
 [5/27] Compile [x64] XAIFollowToActorProcessor.cpp
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Core\Public\Serialization\Archive.h(780,15): warning C4996: 'FArchiveState::SetSerializeContext': SetSerializeContext is not supported. Remove calls to it. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual void SetSerializeContext(FUObjectSerializeContext* InLoadContext) {}
+	             ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Core\Public\Serialization\Archive.h(784,36): warning C4996: 'FArchiveState::GetSerializeContext': GetSerializeContext is not supported. Use FUObjectThreadContext::Get().GetSerializeContext(). - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual FUObjectSerializeContext* GetSerializeContext() { return nullptr; }
+	                                  ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\CoreUObject\Public\UObject\Class.h(4175,31): warning C4996: 'UObject::GetAssetRegistryTags': Implement the version that takes FAssetRegistryTagsContext instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	COREUOBJECT_API virtual void GetAssetRegistryTags(TArray<FAssetRegistryTag>& OutTags) const override;
+	                             ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Engine\Public\Subsystems\WorldSubsystem.h(85,26): warning C4996: 'FTickableObjectBase::IsAllowedToTick': Use IsTickable for conditional ticks and SetTickableTickType to change the tick type after initial registration - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	ENGINE_API virtual bool IsAllowedToTick() const override final;
+	                        ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Engine\Classes\Curves\CurveFloat.h(48,53): warning C4996: 'UCurveBase::GetCurves': Use version taking a TAdderReserverRef - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	ENGINE_API virtual TArray<FRichCurveEditInfoConst> GetCurves() const override;
+	                                                   ^
 [6/27] Compile [x64] Module.XAI.2.cpp
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Core\Public\Serialization\Archive.h(780,15): warning C4996: 'FArchiveState::SetSerializeContext': SetSerializeContext is not supported. Remove calls to it. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual void SetSerializeContext(FUObjectSerializeContext* InLoadContext) {}
+	             ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Core\Public\Serialization\Archive.h(784,36): warning C4996: 'FArchiveState::GetSerializeContext': GetSerializeContext is not supported. Use FUObjectThreadContext::Get().GetSerializeContext(). - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual FUObjectSerializeContext* GetSerializeContext() { return nullptr; }
+	                                  ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\CoreUObject\Public\UObject\Class.h(4175,31): warning C4996: 'UObject::GetAssetRegistryTags': Implement the version that takes FAssetRegistryTagsContext instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	COREUOBJECT_API virtual void GetAssetRegistryTags(TArray<FAssetRegistryTag>& OutTags) const override;
+	                             ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Engine\Public\Subsystems\WorldSubsystem.h(85,26): warning C4996: 'FTickableObjectBase::IsAllowedToTick': Use IsTickable for conditional ticks and SetTickableTickType to change the tick type after initial registration - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	ENGINE_API virtual bool IsAllowedToTick() const override final;
+	                        ^
 [7/27] Compile [x64] Module.XAI.1.cpp
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Core\Public\Serialization\Archive.h(780,15): warning C4996: 'FArchiveState::SetSerializeContext': SetSerializeContext is not supported. Remove calls to it. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual void SetSerializeContext(FUObjectSerializeContext* InLoadContext) {}
+	             ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Core\Public\Serialization\Archive.h(784,36): warning C4996: 'FArchiveState::GetSerializeContext': GetSerializeContext is not supported. Use FUObjectThreadContext::Get().GetSerializeContext(). - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual FUObjectSerializeContext* GetSerializeContext() { return nullptr; }
+	                                  ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\CoreUObject\Public\UObject\Class.h(4175,31): warning C4996: 'UObject::GetAssetRegistryTags': Implement the version that takes FAssetRegistryTagsContext instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	COREUOBJECT_API virtual void GetAssetRegistryTags(TArray<FAssetRegistryTag>& OutTags) const override;
+	                             ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Engine\Public\Subsystems\WorldSubsystem.h(85,26): warning C4996: 'FTickableObjectBase::IsAllowedToTick': Use IsTickable for conditional ticks and SetTickableTickType to change the tick type after initial registration - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	ENGINE_API virtual bool IsAllowedToTick() const override final;
+	                        ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Engine\Classes\Components\SkeletalMeshComponent.h(2044,15): warning C4996: 'USkinnedMeshComponent::UpdateSlaveComponent': This method has been deprecated. Please use UpdateFollowerComponent instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual void UpdateSlaveComponent() override { UpdateFollowerComponent(); };
+	             ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Engine\Classes\Components\SkeletalMeshComponent.h(2052,26): warning C4996: 'USkinnedMeshComponent::SetSkeletalMesh': Use USkeletalMeshComponent::SetSkeletalMesh() or SetSkinnedAssetAndUpdate() instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	ENGINE_API virtual void SetSkeletalMesh(class USkeletalMesh* NewMesh, bool bReinitPose = true) override;  // SetSkeletalMesh may remain and become a UFUNCTION but lose its virtual after it is removed from the SkinnedMeshComponent API
+	                        ^
 [8/27] Compile [x64] XAIGameViewportClient.cpp
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Core\Public\Serialization\Archive.h(780,15): warning C4996: 'FArchiveState::SetSerializeContext': SetSerializeContext is not supported. Remove calls to it. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual void SetSerializeContext(FUObjectSerializeContext* InLoadContext) {}
+	             ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Core\Public\Serialization\Archive.h(784,36): warning C4996: 'FArchiveState::GetSerializeContext': GetSerializeContext is not supported. Use FUObjectThreadContext::Get().GetSerializeContext(). - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual FUObjectSerializeContext* GetSerializeContext() { return nullptr; }
+	                                  ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\CoreUObject\Public\UObject\Class.h(4175,31): warning C4996: 'UObject::GetAssetRegistryTags': Implement the version that takes FAssetRegistryTagsContext instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	COREUOBJECT_API virtual void GetAssetRegistryTags(TArray<FAssetRegistryTag>& OutTags) const override;
+	                             ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Engine\Public\Subsystems\WorldSubsystem.h(85,26): warning C4996: 'FTickableObjectBase::IsAllowedToTick': Use IsTickable for conditional ticks and SetTickableTickType to change the tick type after initial registration - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	ENGINE_API virtual bool IsAllowedToTick() const override final;
+	                        ^
 [9/27] Compile [x64] XAINavigationQueryFilter.cpp
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Core\Public\Serialization\Archive.h(780,15): warning C4996: 'FArchiveState::SetSerializeContext': SetSerializeContext is not supported. Remove calls to it. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual void SetSerializeContext(FUObjectSerializeContext* InLoadContext) {}
+	             ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Core\Public\Serialization\Archive.h(784,36): warning C4996: 'FArchiveState::GetSerializeContext': GetSerializeContext is not supported. Use FUObjectThreadContext::Get().GetSerializeContext(). - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual FUObjectSerializeContext* GetSerializeContext() { return nullptr; }
+	                                  ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\CoreUObject\Public\UObject\Class.h(4175,31): warning C4996: 'UObject::GetAssetRegistryTags': Implement the version that takes FAssetRegistryTagsContext instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	COREUOBJECT_API virtual void GetAssetRegistryTags(TArray<FAssetRegistryTag>& OutTags) const override;
+	                             ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Engine\Public\Subsystems\WorldSubsystem.h(85,26): warning C4996: 'FTickableObjectBase::IsAllowedToTick': Use IsTickable for conditional ticks and SetTickableTickType to change the tick type after initial registration - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	ENGINE_API virtual bool IsAllowedToTick() const override final;
+	                        ^
 [10/27] Compile [x64] XAIMoveToAsyncAction.cpp
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Core\Public\Serialization\Archive.h(780,15): warning C4996: 'FArchiveState::SetSerializeContext': SetSerializeContext is not supported. Remove calls to it. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual void SetSerializeContext(FUObjectSerializeContext* InLoadContext) {}
+	             ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Core\Public\Serialization\Archive.h(784,36): warning C4996: 'FArchiveState::GetSerializeContext': GetSerializeContext is not supported. Use FUObjectThreadContext::Get().GetSerializeContext(). - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual FUObjectSerializeContext* GetSerializeContext() { return nullptr; }
+	                                  ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\CoreUObject\Public\UObject\Class.h(4175,31): warning C4996: 'UObject::GetAssetRegistryTags': Implement the version that takes FAssetRegistryTagsContext instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	COREUOBJECT_API virtual void GetAssetRegistryTags(TArray<FAssetRegistryTag>& OutTags) const override;
+	                             ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Engine\Public\Subsystems\WorldSubsystem.h(85,26): warning C4996: 'FTickableObjectBase::IsAllowedToTick': Use IsTickable for conditional ticks and SetTickableTickType to change the tick type after initial registration - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	ENGINE_API virtual bool IsAllowedToTick() const override final;
+	                        ^
 [11/27] Compile [x64] XAIMoveToProcessor.cpp
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Core\Public\Serialization\Archive.h(780,15): warning C4996: 'FArchiveState::SetSerializeContext': SetSerializeContext is not supported. Remove calls to it. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual void SetSerializeContext(FUObjectSerializeContext* InLoadContext) {}
+	             ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Core\Public\Serialization\Archive.h(784,36): warning C4996: 'FArchiveState::GetSerializeContext': GetSerializeContext is not supported. Use FUObjectThreadContext::Get().GetSerializeContext(). - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual FUObjectSerializeContext* GetSerializeContext() { return nullptr; }
+	                                  ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\CoreUObject\Public\UObject\Class.h(4175,31): warning C4996: 'UObject::GetAssetRegistryTags': Implement the version that takes FAssetRegistryTagsContext instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	COREUOBJECT_API virtual void GetAssetRegistryTags(TArray<FAssetRegistryTag>& OutTags) const override;
+	                             ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Engine\Public\Subsystems\WorldSubsystem.h(85,26): warning C4996: 'FTickableObjectBase::IsAllowedToTick': Use IsTickable for conditional ticks and SetTickableTickType to change the tick type after initial registration - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	ENGINE_API virtual bool IsAllowedToTick() const override final;
+	                        ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Engine\Classes\Curves\CurveFloat.h(48,53): warning C4996: 'UCurveBase::GetCurves': Use version taking a TAdderReserverRef - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	ENGINE_API virtual TArray<FRichCurveEditInfoConst> GetCurves() const override;
+	                                                   ^
 [12/27] Compile [x64] XAIFunctionLibrary.cpp
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Core\Public\Serialization\Archive.h(780,15): warning C4996: 'FArchiveState::SetSerializeContext': SetSerializeContext is not supported. Remove calls to it. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual void SetSerializeContext(FUObjectSerializeContext* InLoadContext) {}
+	             ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Core\Public\Serialization\Archive.h(784,36): warning C4996: 'FArchiveState::GetSerializeContext': GetSerializeContext is not supported. Use FUObjectThreadContext::Get().GetSerializeContext(). - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual FUObjectSerializeContext* GetSerializeContext() { return nullptr; }
+	                                  ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\CoreUObject\Public\UObject\Class.h(4175,31): warning C4996: 'UObject::GetAssetRegistryTags': Implement the version that takes FAssetRegistryTagsContext instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	COREUOBJECT_API virtual void GetAssetRegistryTags(TArray<FAssetRegistryTag>& OutTags) const override;
+	                             ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Experimental\Chaos\Public\Chaos\Box.h(104,17): warning C4996: 'Chaos::FImplicitObject::GetRadius': Please use GetRadiusf instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+		virtual FReal GetRadius() const override
+		              ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Experimental\Chaos\Public\Chaos\Box.h(104,17): note: the template instantiation context (the oldest one first) is
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Experimental\Chaos\Public\Chaos\GeometryParticles.h(151,8): note: while compiling class template 'Chaos::TGeometryParticlesImp'
+	class TGeometryParticlesImp : public TSimpleGeometryParticles<T, d>
+	      ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Experimental\Chaos\Public\Chaos\GeometryParticles.h(585,21): note: see reference to class template instantiation 'Chaos::TBox<Chaos::FReal,3>' being compiled
+				TBox<FReal, 3>::SerializeAsAABBs(Ar, MLocalBounds);
+				                ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Experimental\Chaos\Public\Chaos\ImplicitObjectTransformed.h(169,16): warning C4996: 'Chaos::FImplicitObject::GetMargin': Please use GetMarginf instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual FReal GetMargin() const override
+	              ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Experimental\Chaos\Public\Chaos\ImplicitObjectTransformed.h(169,16): note: the template instantiation context (the oldest one first) is
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Experimental\Chaos\Public\Chaos\ImplicitObjectTransformed.h(452,61): note: see reference to class template instantiation 'Chaos::TImplicitObjectTransformed<Chaos::FReal,3,true>' being compiled
+			TImplicitObjectTransformed<FReal, 3>* InnerTransformed = static_cast<TImplicitObjectTransformed<FReal, 3>*>(NewTransformed.GetReference());
+			                                                         ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Experimental\Chaos\Public\Chaos\ImplicitObjectTransformed.h(175,16): warning C4996: 'Chaos::FImplicitObject::GetRadius': Please use GetRadiusf instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual FReal GetRadius() const override
+	              ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Experimental\Chaos\Public\Chaos\Sphere.h(74,17): warning C4996: 'Chaos::FImplicitObject::GetRadius': Please use GetRadiusf instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+		virtual FReal GetRadius() const override
+		              ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Experimental\Chaos\Public\Chaos\Sphere.h(74,17): note: the template instantiation context (the oldest one first) is
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Experimental\Chaos\Public\Chaos\Sphere.h(27,8): note: while compiling class template 'Chaos::TSphere'
+	class TSphere final : public FImplicitObject
+	      ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Experimental\Chaos\Public\Chaos\Sphere.h(337,41): note: see reference to class template instantiation 'Chaos::TSphere<Chaos::FReal,3>' being compiled
+			return Chaos::FImplicitObjectPtr(new FSphere(Center, GetRadiusf()));
+			                                     ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Experimental\Chaos\Public\Chaos\Convex.h(207,17): warning C4996: 'Chaos::FImplicitObject::GetMargin': Please use GetMarginf instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+		virtual FReal GetMargin() const override
+		              ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Experimental\Chaos\Public\Chaos\Convex.h(212,17): warning C4996: 'Chaos::FImplicitObject::GetRadius': Please use GetRadiusf instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+		virtual FReal GetRadius() const override
+		              ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Experimental\Chaos\Public\Chaos\Plane.h(42,16): warning C4996: 'Chaos::FImplicitObject::GetRadius': Please use GetRadiusf instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual FReal GetRadius() const override
+	              ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Experimental\Chaos\Public\Chaos\Plane.h(42,16): note: the template instantiation context (the oldest one first) is
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Experimental\Chaos\Public\Chaos\Convex.h(923,5): note: see reference to class template instantiation 'Chaos::TPlane<Chaos::FConvex::FRealType,3>' being compiled
+				Ar << TmpPlanes;
+				^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Engine\Classes\Curves\CurveFloat.h(48,53): warning C4996: 'UCurveBase::GetCurves': Use version taking a TAdderReserverRef - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	ENGINE_API virtual TArray<FRichCurveEditInfoConst> GetCurves() const override;
+	                                                   ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Engine\Public\Subsystems\WorldSubsystem.h(85,26): warning C4996: 'FTickableObjectBase::IsAllowedToTick': Use IsTickable for conditional ticks and SetTickableTickType to change the tick type after initial registration - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	ENGINE_API virtual bool IsAllowedToTick() const override final;
+	                        ^
 [13/27] Compile [x64] XAIMovementComponent.cpp
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Core\Public\Serialization\Archive.h(780,15): warning C4996: 'FArchiveState::SetSerializeContext': SetSerializeContext is not supported. Remove calls to it. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual void SetSerializeContext(FUObjectSerializeContext* InLoadContext) {}
+	             ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Core\Public\Serialization\Archive.h(784,36): warning C4996: 'FArchiveState::GetSerializeContext': GetSerializeContext is not supported. Use FUObjectThreadContext::Get().GetSerializeContext(). - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual FUObjectSerializeContext* GetSerializeContext() { return nullptr; }
+	                                  ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\CoreUObject\Public\UObject\Class.h(4175,31): warning C4996: 'UObject::GetAssetRegistryTags': Implement the version that takes FAssetRegistryTagsContext instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	COREUOBJECT_API virtual void GetAssetRegistryTags(TArray<FAssetRegistryTag>& OutTags) const override;
+	                             ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Engine\Public\Subsystems\WorldSubsystem.h(85,26): warning C4996: 'FTickableObjectBase::IsAllowedToTick': Use IsTickable for conditional ticks and SetTickableTickType to change the tick type after initial registration - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	ENGINE_API virtual bool IsAllowedToTick() const override final;
+	                        ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Engine\Classes\Components\SkeletalMeshComponent.h(2044,15): warning C4996: 'USkinnedMeshComponent::UpdateSlaveComponent': This method has been deprecated. Please use UpdateFollowerComponent instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual void UpdateSlaveComponent() override { UpdateFollowerComponent(); };
+	             ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Engine\Classes\Components\SkeletalMeshComponent.h(2052,26): warning C4996: 'USkinnedMeshComponent::SetSkeletalMesh': Use USkeletalMeshComponent::SetSkeletalMesh() or SetSkinnedAssetAndUpdate() instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	ENGINE_API virtual void SetSkeletalMesh(class USkeletalMesh* NewMesh, bool bReinitPose = true) override;  // SetSkeletalMesh may remain and become a UFUNCTION but lose its virtual after it is removed from the SkinnedMeshComponent API
+	                        ^
 [14/27] Compile [x64] XAIActor.cpp
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Core\Public\Serialization\Archive.h(780,15): warning C4996: 'FArchiveState::SetSerializeContext': SetSerializeContext is not supported. Remove calls to it. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual void SetSerializeContext(FUObjectSerializeContext* InLoadContext) {}
+	             ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Core\Public\Serialization\Archive.h(784,36): warning C4996: 'FArchiveState::GetSerializeContext': GetSerializeContext is not supported. Use FUObjectThreadContext::Get().GetSerializeContext(). - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual FUObjectSerializeContext* GetSerializeContext() { return nullptr; }
+	                                  ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\CoreUObject\Public\UObject\Class.h(4175,31): warning C4996: 'UObject::GetAssetRegistryTags': Implement the version that takes FAssetRegistryTagsContext instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	COREUOBJECT_API virtual void GetAssetRegistryTags(TArray<FAssetRegistryTag>& OutTags) const override;
+	                             ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Engine\Public\Subsystems\WorldSubsystem.h(85,26): warning C4996: 'FTickableObjectBase::IsAllowedToTick': Use IsTickable for conditional ticks and SetTickableTickType to change the tick type after initial registration - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	ENGINE_API virtual bool IsAllowedToTick() const override final;
+	                        ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\CoreUObject\Public\UObject\ObjectRedirector.h(42,15): warning C4996: 'UObject::GetAssetRegistryTags': Implement the version that takes FAssetRegistryTagsContext instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual void GetAssetRegistryTags(TArray<FAssetRegistryTag>& OutTags) const override;
+	             ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Engine\Classes\Components\SkeletalMeshComponent.h(2044,15): warning C4996: 'USkinnedMeshComponent::UpdateSlaveComponent': This method has been deprecated. Please use UpdateFollowerComponent instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual void UpdateSlaveComponent() override { UpdateFollowerComponent(); };
+	             ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Engine\Classes\Components\SkeletalMeshComponent.h(2052,26): warning C4996: 'USkinnedMeshComponent::SetSkeletalMesh': Use USkeletalMeshComponent::SetSkeletalMesh() or SetSkinnedAssetAndUpdate() instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	ENGINE_API virtual void SetSkeletalMesh(class USkeletalMesh* NewMesh, bool bReinitPose = true) override;  // SetSkeletalMesh may remain and become a UFUNCTION but lose its virtual after it is removed from the SkinnedMeshComponent API
+	                        ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Engine\Classes\Curves\CurveFloat.h(48,53): warning C4996: 'UCurveBase::GetCurves': Use version taking a TAdderReserverRef - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	ENGINE_API virtual TArray<FRichCurveEditInfoConst> GetCurves() const override;
+	                                                   ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Experimental\Chaos\Public\Chaos\Box.h(104,17): warning C4996: 'Chaos::FImplicitObject::GetRadius': Please use GetRadiusf instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+		virtual FReal GetRadius() const override
+		              ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Experimental\Chaos\Public\Chaos\Box.h(104,17): note: the template instantiation context (the oldest one first) is
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Experimental\Chaos\Public\Chaos\GeometryParticles.h(151,8): note: while compiling class template 'Chaos::TGeometryParticlesImp'
+	class TGeometryParticlesImp : public TSimpleGeometryParticles<T, d>
+	      ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Experimental\Chaos\Public\Chaos\GeometryParticles.h(585,21): note: see reference to class template instantiation 'Chaos::TBox<Chaos::FReal,3>' being compiled
+				TBox<FReal, 3>::SerializeAsAABBs(Ar, MLocalBounds);
+				                ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Experimental\Chaos\Public\Chaos\ImplicitObjectTransformed.h(169,16): warning C4996: 'Chaos::FImplicitObject::GetMargin': Please use GetMarginf instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual FReal GetMargin() const override
+	              ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Experimental\Chaos\Public\Chaos\ImplicitObjectTransformed.h(169,16): note: the template instantiation context (the oldest one first) is
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Experimental\Chaos\Public\Chaos\ImplicitObjectTransformed.h(452,61): note: see reference to class template instantiation 'Chaos::TImplicitObjectTransformed<Chaos::FReal,3,true>' being compiled
+			TImplicitObjectTransformed<FReal, 3>* InnerTransformed = static_cast<TImplicitObjectTransformed<FReal, 3>*>(NewTransformed.GetReference());
+			                                                         ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Experimental\Chaos\Public\Chaos\ImplicitObjectTransformed.h(175,16): warning C4996: 'Chaos::FImplicitObject::GetRadius': Please use GetRadiusf instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual FReal GetRadius() const override
+	              ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Experimental\Chaos\Public\Chaos\Sphere.h(74,17): warning C4996: 'Chaos::FImplicitObject::GetRadius': Please use GetRadiusf instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+		virtual FReal GetRadius() const override
+		              ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Experimental\Chaos\Public\Chaos\Sphere.h(74,17): note: the template instantiation context (the oldest one first) is
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Experimental\Chaos\Public\Chaos\Sphere.h(27,8): note: while compiling class template 'Chaos::TSphere'
+	class TSphere final : public FImplicitObject
+	      ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Experimental\Chaos\Public\Chaos\Sphere.h(337,41): note: see reference to class template instantiation 'Chaos::TSphere<Chaos::FReal,3>' being compiled
+			return Chaos::FImplicitObjectPtr(new FSphere(Center, GetRadiusf()));
+			                                     ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Experimental\Chaos\Public\Chaos\Convex.h(207,17): warning C4996: 'Chaos::FImplicitObject::GetMargin': Please use GetMarginf instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+		virtual FReal GetMargin() const override
+		              ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Experimental\Chaos\Public\Chaos\Convex.h(212,17): warning C4996: 'Chaos::FImplicitObject::GetRadius': Please use GetRadiusf instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+		virtual FReal GetRadius() const override
+		              ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Experimental\Chaos\Public\Chaos\Plane.h(42,16): warning C4996: 'Chaos::FImplicitObject::GetRadius': Please use GetRadiusf instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual FReal GetRadius() const override
+	              ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Experimental\Chaos\Public\Chaos\Plane.h(42,16): note: the template instantiation context (the oldest one first) is
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Experimental\Chaos\Public\Chaos\Convex.h(923,5): note: see reference to class template instantiation 'Chaos::TPlane<Chaos::FConvex::FRealType,3>' being compiled
+				Ar << TmpPlanes;
+				^
 [15/27] Compile [x64] XAISTT_DirectlyMoveInLocation.cpp
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Core\Public\Serialization\Archive.h(780,15): warning C4996: 'FArchiveState::SetSerializeContext': SetSerializeContext is not supported. Remove calls to it. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual void SetSerializeContext(FUObjectSerializeContext* InLoadContext) {}
+	             ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Core\Public\Serialization\Archive.h(784,36): warning C4996: 'FArchiveState::GetSerializeContext': GetSerializeContext is not supported. Use FUObjectThreadContext::Get().GetSerializeContext(). - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual FUObjectSerializeContext* GetSerializeContext() { return nullptr; }
+	                                  ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\CoreUObject\Public\UObject\Class.h(4175,31): warning C4996: 'UObject::GetAssetRegistryTags': Implement the version that takes FAssetRegistryTagsContext instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	COREUOBJECT_API virtual void GetAssetRegistryTags(TArray<FAssetRegistryTag>& OutTags) const override;
+	                             ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Engine\Public\Subsystems\WorldSubsystem.h(85,26): warning C4996: 'FTickableObjectBase::IsAllowedToTick': Use IsTickable for conditional ticks and SetTickableTickType to change the tick type after initial registration - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	ENGINE_API virtual bool IsAllowedToTick() const override final;
+	                        ^
 [16/27] Compile [x64] XAIProcessor.cpp
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Core\Public\Serialization\Archive.h(780,15): warning C4996: 'FArchiveState::SetSerializeContext': SetSerializeContext is not supported. Remove calls to it. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual void SetSerializeContext(FUObjectSerializeContext* InLoadContext) {}
+	             ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Core\Public\Serialization\Archive.h(784,36): warning C4996: 'FArchiveState::GetSerializeContext': GetSerializeContext is not supported. Use FUObjectThreadContext::Get().GetSerializeContext(). - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual FUObjectSerializeContext* GetSerializeContext() { return nullptr; }
+	                                  ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\CoreUObject\Public\UObject\Class.h(4175,31): warning C4996: 'UObject::GetAssetRegistryTags': Implement the version that takes FAssetRegistryTagsContext instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	COREUOBJECT_API virtual void GetAssetRegistryTags(TArray<FAssetRegistryTag>& OutTags) const override;
+	                             ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Engine\Public\Subsystems\WorldSubsystem.h(85,26): warning C4996: 'FTickableObjectBase::IsAllowedToTick': Use IsTickable for conditional ticks and SetTickableTickType to change the tick type after initial registration - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	ENGINE_API virtual bool IsAllowedToTick() const override final;
+	                        ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Engine\Classes\Curves\CurveFloat.h(48,53): warning C4996: 'UCurveBase::GetCurves': Use version taking a TAdderReserverRef - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	ENGINE_API virtual TArray<FRichCurveEditInfoConst> GetCurves() const override;
+	                                                   ^
 [17/27] Compile [x64] XAISTT_FollowToActor.cpp
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Core\Public\Serialization\Archive.h(780,15): warning C4996: 'FArchiveState::SetSerializeContext': SetSerializeContext is not supported. Remove calls to it. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual void SetSerializeContext(FUObjectSerializeContext* InLoadContext) {}
+	             ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Core\Public\Serialization\Archive.h(784,36): warning C4996: 'FArchiveState::GetSerializeContext': GetSerializeContext is not supported. Use FUObjectThreadContext::Get().GetSerializeContext(). - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual FUObjectSerializeContext* GetSerializeContext() { return nullptr; }
+	                                  ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\CoreUObject\Public\UObject\Class.h(4175,31): warning C4996: 'UObject::GetAssetRegistryTags': Implement the version that takes FAssetRegistryTagsContext instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	COREUOBJECT_API virtual void GetAssetRegistryTags(TArray<FAssetRegistryTag>& OutTags) const override;
+	                             ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Engine\Public\Subsystems\WorldSubsystem.h(85,26): warning C4996: 'FTickableObjectBase::IsAllowedToTick': Use IsTickable for conditional ticks and SetTickableTickType to change the tick type after initial registration - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	ENGINE_API virtual bool IsAllowedToTick() const override final;
+	                        ^
 [18/27] Compile [x64] XAISTT_GetRandomLocation.cpp
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Core\Public\Serialization\Archive.h(780,15): warning C4996: 'FArchiveState::SetSerializeContext': SetSerializeContext is not supported. Remove calls to it. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual void SetSerializeContext(FUObjectSerializeContext* InLoadContext) {}
+	             ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Core\Public\Serialization\Archive.h(784,36): warning C4996: 'FArchiveState::GetSerializeContext': GetSerializeContext is not supported. Use FUObjectThreadContext::Get().GetSerializeContext(). - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual FUObjectSerializeContext* GetSerializeContext() { return nullptr; }
+	                                  ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\CoreUObject\Public\UObject\Class.h(4175,31): warning C4996: 'UObject::GetAssetRegistryTags': Implement the version that takes FAssetRegistryTagsContext instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	COREUOBJECT_API virtual void GetAssetRegistryTags(TArray<FAssetRegistryTag>& OutTags) const override;
+	                             ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Engine\Public\Subsystems\WorldSubsystem.h(85,26): warning C4996: 'FTickableObjectBase::IsAllowedToTick': Use IsTickable for conditional ticks and SetTickableTickType to change the tick type after initial registration - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	ENGINE_API virtual bool IsAllowedToTick() const override final;
+	                        ^
 [19/27] Compile [x64] XAISTT_MoveTo.cpp
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Core\Public\Serialization\Archive.h(780,15): warning C4996: 'FArchiveState::SetSerializeContext': SetSerializeContext is not supported. Remove calls to it. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual void SetSerializeContext(FUObjectSerializeContext* InLoadContext) {}
+	             ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Core\Public\Serialization\Archive.h(784,36): warning C4996: 'FArchiveState::GetSerializeContext': GetSerializeContext is not supported. Use FUObjectThreadContext::Get().GetSerializeContext(). - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual FUObjectSerializeContext* GetSerializeContext() { return nullptr; }
+	                                  ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\CoreUObject\Public\UObject\Class.h(4175,31): warning C4996: 'UObject::GetAssetRegistryTags': Implement the version that takes FAssetRegistryTagsContext instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	COREUOBJECT_API virtual void GetAssetRegistryTags(TArray<FAssetRegistryTag>& OutTags) const override;
+	                             ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Engine\Public\Subsystems\WorldSubsystem.h(85,26): warning C4996: 'FTickableObjectBase::IsAllowedToTick': Use IsTickable for conditional ticks and SetTickableTickType to change the tick type after initial registration - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	ENGINE_API virtual bool IsAllowedToTick() const override final;
+	                        ^
 [20/27] Compile [x64] XAISTT_ProjectPointToNavigation.cpp
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Core\Public\Serialization\Archive.h(780,15): warning C4996: 'FArchiveState::SetSerializeContext': SetSerializeContext is not supported. Remove calls to it. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual void SetSerializeContext(FUObjectSerializeContext* InLoadContext) {}
+	             ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Core\Public\Serialization\Archive.h(784,36): warning C4996: 'FArchiveState::GetSerializeContext': GetSerializeContext is not supported. Use FUObjectThreadContext::Get().GetSerializeContext(). - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual FUObjectSerializeContext* GetSerializeContext() { return nullptr; }
+	                                  ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\CoreUObject\Public\UObject\Class.h(4175,31): warning C4996: 'UObject::GetAssetRegistryTags': Implement the version that takes FAssetRegistryTagsContext instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	COREUOBJECT_API virtual void GetAssetRegistryTags(TArray<FAssetRegistryTag>& OutTags) const override;
+	                             ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Engine\Public\Subsystems\WorldSubsystem.h(85,26): warning C4996: 'FTickableObjectBase::IsAllowedToTick': Use IsTickable for conditional ticks and SetTickableTickType to change the tick type after initial registration - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	ENGINE_API virtual bool IsAllowedToTick() const override final;
+	                        ^
 [21/27] Compile [x64] XAISTT_IsOnNavigation.cpp
-[22/27] Compile [x64] XAISTT_SetMaxFlySpeed.cpp
-[23/27] Compile [x64] XAISTT_SetEnableAvoidance.cpp
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Core\Public\Serialization\Archive.h(780,15): warning C4996: 'FArchiveState::SetSerializeContext': SetSerializeContext is not supported. Remove calls to it. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual void SetSerializeContext(FUObjectSerializeContext* InLoadContext) {}
+	             ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Core\Public\Serialization\Archive.h(784,36): warning C4996: 'FArchiveState::GetSerializeContext': GetSerializeContext is not supported. Use FUObjectThreadContext::Get().GetSerializeContext(). - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual FUObjectSerializeContext* GetSerializeContext() { return nullptr; }
+	                                  ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\CoreUObject\Public\UObject\Class.h(4175,31): warning C4996: 'UObject::GetAssetRegistryTags': Implement the version that takes FAssetRegistryTagsContext instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	COREUOBJECT_API virtual void GetAssetRegistryTags(TArray<FAssetRegistryTag>& OutTags) const override;
+	                             ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Engine\Public\Subsystems\WorldSubsystem.h(85,26): warning C4996: 'FTickableObjectBase::IsAllowedToTick': Use IsTickable for conditional ticks and SetTickableTickType to change the tick type after initial registration - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	ENGINE_API virtual bool IsAllowedToTick() const override final;
+	                        ^
+[22/27] Compile [x64] XAISTT_SetEnableAvoidance.cpp
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Core\Public\Serialization\Archive.h(780,15): warning C4996: 'FArchiveState::SetSerializeContext': SetSerializeContext is not supported. Remove calls to it. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual void SetSerializeContext(FUObjectSerializeContext* InLoadContext) {}
+	             ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Core\Public\Serialization\Archive.h(784,36): warning C4996: 'FArchiveState::GetSerializeContext': GetSerializeContext is not supported. Use FUObjectThreadContext::Get().GetSerializeContext(). - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual FUObjectSerializeContext* GetSerializeContext() { return nullptr; }
+	                                  ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\CoreUObject\Public\UObject\Class.h(4175,31): warning C4996: 'UObject::GetAssetRegistryTags': Implement the version that takes FAssetRegistryTagsContext instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	COREUOBJECT_API virtual void GetAssetRegistryTags(TArray<FAssetRegistryTag>& OutTags) const override;
+	                             ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Engine\Public\Subsystems\WorldSubsystem.h(85,26): warning C4996: 'FTickableObjectBase::IsAllowedToTick': Use IsTickable for conditional ticks and SetTickableTickType to change the tick type after initial registration - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	ENGINE_API virtual bool IsAllowedToTick() const override final;
+	                        ^
+[23/27] Compile [x64] XAISTT_SetMaxFlySpeed.cpp
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Core\Public\Serialization\Archive.h(780,15): warning C4996: 'FArchiveState::SetSerializeContext': SetSerializeContext is not supported. Remove calls to it. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual void SetSerializeContext(FUObjectSerializeContext* InLoadContext) {}
+	             ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Core\Public\Serialization\Archive.h(784,36): warning C4996: 'FArchiveState::GetSerializeContext': GetSerializeContext is not supported. Use FUObjectThreadContext::Get().GetSerializeContext(). - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual FUObjectSerializeContext* GetSerializeContext() { return nullptr; }
+	                                  ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\CoreUObject\Public\UObject\Class.h(4175,31): warning C4996: 'UObject::GetAssetRegistryTags': Implement the version that takes FAssetRegistryTagsContext instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	COREUOBJECT_API virtual void GetAssetRegistryTags(TArray<FAssetRegistryTag>& OutTags) const override;
+	                             ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Engine\Public\Subsystems\WorldSubsystem.h(85,26): warning C4996: 'FTickableObjectBase::IsAllowedToTick': Use IsTickable for conditional ticks and SetTickableTickType to change the tick type after initial registration - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	ENGINE_API virtual bool IsAllowedToTick() const override final;
+	                        ^
 [24/27] Compile [x64] XAISTT_SetMaxWalkSpeed.cpp
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Core\Public\Serialization\Archive.h(780,15): warning C4996: 'FArchiveState::SetSerializeContext': SetSerializeContext is not supported. Remove calls to it. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual void SetSerializeContext(FUObjectSerializeContext* InLoadContext) {}
+	             ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Core\Public\Serialization\Archive.h(784,36): warning C4996: 'FArchiveState::GetSerializeContext': GetSerializeContext is not supported. Use FUObjectThreadContext::Get().GetSerializeContext(). - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual FUObjectSerializeContext* GetSerializeContext() { return nullptr; }
+	                                  ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\CoreUObject\Public\UObject\Class.h(4175,31): warning C4996: 'UObject::GetAssetRegistryTags': Implement the version that takes FAssetRegistryTagsContext instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	COREUOBJECT_API virtual void GetAssetRegistryTags(TArray<FAssetRegistryTag>& OutTags) const override;
+	                             ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Engine\Public\Subsystems\WorldSubsystem.h(85,26): warning C4996: 'FTickableObjectBase::IsAllowedToTick': Use IsTickable for conditional ticks and SetTickableTickType to change the tick type after initial registration - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	ENGINE_API virtual bool IsAllowedToTick() const override final;
+	                        ^
 [25/27] Compile [x64] XAITickableTaskObject.cpp
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Core\Public\Serialization\Archive.h(780,15): warning C4996: 'FArchiveState::SetSerializeContext': SetSerializeContext is not supported. Remove calls to it. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual void SetSerializeContext(FUObjectSerializeContext* InLoadContext) {}
+	             ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Core\Public\Serialization\Archive.h(784,36): warning C4996: 'FArchiveState::GetSerializeContext': GetSerializeContext is not supported. Use FUObjectThreadContext::Get().GetSerializeContext(). - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual FUObjectSerializeContext* GetSerializeContext() { return nullptr; }
+	                                  ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\CoreUObject\Public\UObject\Class.h(4175,31): warning C4996: 'UObject::GetAssetRegistryTags': Implement the version that takes FAssetRegistryTagsContext instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	COREUOBJECT_API virtual void GetAssetRegistryTags(TArray<FAssetRegistryTag>& OutTags) const override;
+	                             ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\CoreUObject\Public\UObject\ObjectRedirector.h(42,15): warning C4996: 'UObject::GetAssetRegistryTags': Implement the version that takes FAssetRegistryTagsContext instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual void GetAssetRegistryTags(TArray<FAssetRegistryTag>& OutTags) const override;
+	             ^
 [26/27] Compile [x64] XAISTT_SetOrientRotationToMovement.cpp
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Core\Public\Serialization\Archive.h(780,15): warning C4996: 'FArchiveState::SetSerializeContext': SetSerializeContext is not supported. Remove calls to it. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual void SetSerializeContext(FUObjectSerializeContext* InLoadContext) {}
+	             ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Core\Public\Serialization\Archive.h(784,36): warning C4996: 'FArchiveState::GetSerializeContext': GetSerializeContext is not supported. Use FUObjectThreadContext::Get().GetSerializeContext(). - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual FUObjectSerializeContext* GetSerializeContext() { return nullptr; }
+	                                  ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\CoreUObject\Public\UObject\Class.h(4175,31): warning C4996: 'UObject::GetAssetRegistryTags': Implement the version that takes FAssetRegistryTagsContext instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	COREUOBJECT_API virtual void GetAssetRegistryTags(TArray<FAssetRegistryTag>& OutTags) const override;
+	                             ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Engine\Public\Subsystems\WorldSubsystem.h(85,26): warning C4996: 'FTickableObjectBase::IsAllowedToTick': Use IsTickable for conditional ticks and SetTickableTickType to change the tick type after initial registration - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	ENGINE_API virtual bool IsAllowedToTick() const override final;
+	                        ^
 [27/27] Compile [x64] XAITaskObject.cpp
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Core\Public\Serialization\Archive.h(780,15): warning C4996: 'FArchiveState::SetSerializeContext': SetSerializeContext is not supported. Remove calls to it. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual void SetSerializeContext(FUObjectSerializeContext* InLoadContext) {}
+	             ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Core\Public\Serialization\Archive.h(784,36): warning C4996: 'FArchiveState::GetSerializeContext': GetSerializeContext is not supported. Use FUObjectThreadContext::Get().GetSerializeContext(). - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual FUObjectSerializeContext* GetSerializeContext() { return nullptr; }
+	                                  ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\CoreUObject\Public\UObject\Class.h(4175,31): warning C4996: 'UObject::GetAssetRegistryTags': Implement the version that takes FAssetRegistryTagsContext instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	COREUOBJECT_API virtual void GetAssetRegistryTags(TArray<FAssetRegistryTag>& OutTags) const override;
+	                             ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\CoreUObject\Public\UObject\ObjectRedirector.h(42,15): warning C4996: 'UObject::GetAssetRegistryTags': Implement the version that takes FAssetRegistryTagsContext instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	virtual void GetAssetRegistryTags(TArray<FAssetRegistryTag>& OutTags) const override;
+	             ^
+B:\UnrealEngine\UE_5.7\Engine\Source\Runtime\Engine\Public\Subsystems\WorldSubsystem.h(85,26): warning C4996: 'FTickableObjectBase::IsAllowedToTick': Use IsTickable for conditional ticks and SetTickableTickType to change the tick type after initial registration - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	ENGINE_API virtual bool IsAllowedToTick() const override final;
+	                        ^
 
-Trace written to file C:/Users/dexie/AppData/Roaming/Unreal Engine/AutomationTool/Logs/B+UnrealEngine+UE_5.7/UBA-UnrealGame-Win64-Shipping.uba with size 10.3kb
-Total time in Unreal Build Accelerator local executor: 25.66 seconds
+Trace written to file C:/Users/dexie/AppData/Roaming/Unreal Engine/AutomationTool/Logs/B+UnrealEngine+UE_5.7/UBA-UnrealGame-Win64-Shipping.uba with size 10.6kb
+Total time in Unreal Build Accelerator local executor: 28.70 seconds
 
 Result: Succeeded
-Total execution time: 28.89 seconds
-Took 29,02s to run dotnet.exe, ExitCode=0
+Total execution time: 31.57 seconds
+Took 31,71s to run dotnet.exe, ExitCode=0
 Reading filter rules from B:\Projects\XAIDemo\Builds\XAI\HostProject\Plugins\XAI\Config\FilterPlugin.ini
 Loading FilterPluginWin64.ini
 BUILD SUCCESSFUL
-AutomationTool executed for 0h 2m 21s
+AutomationTool executed for 0h 2m 1s
 AutomationTool exiting with ExitCode=0 (Success)
