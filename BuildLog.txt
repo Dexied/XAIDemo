@@ -3,10 +3,10 @@ Using bundled DotNet SDK version: 10.0 win-x64
 Starting AutomationTool...
 Parsing command line: BuildPlugin -Plugin=B:\Projects\XAIDemo\Plugins\XAI\XAI.uplugin -Package=B:\Projects\XAIDemo\Builds\XAI -Rocket -2019
 Initializing script modules...
-Total script module initialization time: 0.58 s.
+Total script module initialization time: 0.21 s.
 Using B:\VisualStudio\Community\MSBuild\Current\Bin\MSBuild.exe
 Executing commands...
-Copying 250 file(s) using max 64 thread(s)
+Copying 292 file(s) using max 64 thread(s)
 Reading plugin from B:\Projects\XAIDemo\Builds\XAI\HostProject\Plugins\XAI\XAI.uplugin...
 Building plugin for host platforms: Win64
 Running: B:\UnrealEngine\UE_5.8\Engine\Binaries\ThirdParty\DotNet\10.0\win-x64\dotnet.exe "B:\UnrealEngine\UE_5.8\Engine\Binaries\DotNET\UnrealBuildTool\UnrealBuildTool.dll" UnrealEditor Win64 Development -Project="B:\Projects\XAIDemo\Builds\XAI\HostProject\HostProject.uproject" -plugin="B:\Projects\XAIDemo\Builds\XAI\HostProject\Plugins\XAI\XAI.uplugin" -noubtmakefiles -manifest="B:\Projects\XAIDemo\Builds\XAI\HostProject\Saved\Manifest-UnrealEditor-Win64-Development.xml" -nohotreload -log="C:\Users\dexie\AppData\Roaming\Unreal Engine\AutomationTool\Logs\B+UnrealEngine+UE_5.8\UBA-UnrealEditor-Win64-Development.txt"
@@ -28,7 +28,7 @@ Using Visual Studio 14.44.35228 toolchain (B:\VisualStudio\Community\VC\Tools\MS
 =================================
 Using Unreal Build Accelerator local executor to run 36 action(s)
   CPU 8 physical cores, 16 logical cores
-  Memory 63.91 GB physical, 18.91 GB/67.91 GB committed
+  Memory 63.91 GB physical, 15.04 GB/67.91 GB committed
   UBA Storage capacity 40 GB
 [1/36] Compile Resource [x64] Default.rc2
 [2/36] Compile Resource [x64] Default.rc2
@@ -43,37 +43,37 @@ Using Unreal Build Accelerator local executor to run 36 action(s)
 [11/36] Compile [x64] XAIMoveToProcessor.cpp
 [12/36] Compile [x64] XAINavigationQueryFilter.cpp
 [13/36] Compile [x64] XAIMoveToAsyncAction.cpp
-[14/36] Compile [x64] XAIProcessor.cpp
-[15/36] Compile [x64] XAIFunctionLibrary.cpp
-[16/36] Compile [x64] XAISTT_FollowToActor.cpp
-[17/36] Compile [x64] XAISTT_DirectlyMoveInLocation.cpp
-[18/36] Compile [x64] XAISTT_GetRandomLocation.cpp
-[19/36] Compile [x64] XAIActor.cpp
+[14/36] Compile [x64] XAIFunctionLibrary.cpp
+[15/36] Compile [x64] XAIProcessor.cpp
+[16/36] Compile [x64] XAISTT_DirectlyMoveInLocation.cpp
+[17/36] Compile [x64] XAISTT_FollowToActor.cpp
+[18/36] Compile [x64] XAIActor.cpp
+[19/36] Compile [x64] XAISTT_GetRandomLocation.cpp
 [20/36] Compile [x64] XAISTT_IsOnNavigation.cpp
 [21/36] Compile [x64] XAISTT_MoveTo.cpp
 [22/36] Compile [x64] XAISTT_ProjectPointToNavigation.cpp
-[23/36] Compile [x64] XAITickableTaskObject.cpp
-[24/36] Compile [x64] Module.XAIEditor.cpp
-[25/36] Compile [x64] XAITaskObject.cpp
-[26/36] Compile [x64] XAISTT_SetEnableAvoidance.cpp
-[27/36] Compile [x64] XAISTT_SetMaxFlySpeed.cpp
+[23/36] Compile [x64] XAISTT_SetEnableAvoidance.cpp
+[24/36] Compile [x64] XAITaskObject.cpp
+[25/36] Compile [x64] XAISTT_SetMaxFlySpeed.cpp
+[26/36] Compile [x64] XAITickableTaskObject.cpp
+[27/36] Compile [x64] Module.XAIEditor.cpp
 [28/36] Compile [x64] XAISTT_SetMaxWalkSpeed.cpp
 [29/36] Compile [x64] XAISTT_SetOrientRotationToMovement.cpp
-[30/36] Link [x64] UnrealEditor-XAI.lib
-[31/36] Compile [x64] XAITracerVisualizer.cpp
-[32/36] Compile [x64] XAIEditor.cpp
+[30/36] Compile [x64] XAIEditor.cpp
+[31/36] Link [x64] UnrealEditor-XAI.lib
+[32/36] Compile [x64] XAITracerVisualizer.cpp
 [33/36] Link [x64] UnrealEditor-XAIEditor.lib
 [34/36] Link [x64] UnrealEditor-XAI.dll
 [35/36] Link [x64] UnrealEditor-XAIEditor.dll
 [36/36] WriteMetadata UnrealEditor.target [NoUba]
 
-Total time in Unreal Build Accelerator local executor: 54.33 seconds
+Total time in Unreal Build Accelerator local executor: 52.33 seconds
 Output binary: B:\UnrealEngine\UE_5.8\Engine\Binaries\Win64\UnrealEditor.exe
 
 Result: Succeeded
-Total execution time: 94.25 seconds
-Trace written to file C:\Users\dexie\AppData\Local\UnrealBuildTool\Trace.uba with size 21.3kb
-Took 95,19s to run dotnet.exe, ExitCode=0
+Total execution time: 89.10 seconds
+Trace written to file C:\Users\dexie\AppData\Local\UnrealBuildTool\Trace.uba with size 21.1kb
+Took 89,50s to run dotnet.exe, ExitCode=0
 Building plugin for target platforms: Win64
 Running: B:\UnrealEngine\UE_5.8\Engine\Binaries\ThirdParty\DotNet\10.0\win-x64\dotnet.exe "B:\UnrealEngine\UE_5.8\Engine\Binaries\DotNET\UnrealBuildTool\UnrealBuildTool.dll" UnrealGame Win64 Development -Project="B:\Projects\XAIDemo\Builds\XAI\HostProject\HostProject.uproject" -plugin="B:\Projects\XAIDemo\Builds\XAI\HostProject\Plugins\XAI\XAI.uplugin" -noubtmakefiles -manifest="B:\Projects\XAIDemo\Builds\XAI\HostProject\Saved\Manifest-UnrealGame-Win64-Development.xml" -nohotreload -log="C:\Users\dexie\AppData\Roaming\Unreal Engine\AutomationTool\Logs\B+UnrealEngine+UE_5.8\UBA-UnrealGame-Win64-Development.txt"
 Log file: C:\Users\dexie\AppData\Roaming\Unreal Engine\AutomationTool\Logs\B+UnrealEngine+UE_5.8\UBA-UnrealGame-Win64-Development.txt
@@ -92,7 +92,7 @@ Using Visual Studio 14.44.35228 toolchain (B:\VisualStudio\Community\VC\Tools\MS
 =================================
 Using Unreal Build Accelerator local executor to run 25 action(s)
   CPU 8 physical cores, 16 logical cores
-  Memory 63.91 GB physical, 18.45 GB/67.91 GB committed
+  Memory 63.91 GB physical, 14.29 GB/67.91 GB committed
   UBA Storage capacity 40 GB
 [1/25] Compile [x64] XAI.cpp
 [2/25] Compile [x64] XAIFollowToActorAsyncAction.cpp
@@ -102,8 +102,8 @@ Using Unreal Build Accelerator local executor to run 25 action(s)
 [6/25] Compile [x64] XAIMoveToAsyncAction.cpp
 [7/25] Compile [x64] XAINavigationQueryFilter.cpp
 [8/25] Compile [x64] XAIFunctionLibrary.cpp
-[9/25] Compile [x64] XAIMoveToProcessor.cpp
-[10/25] Compile [x64] Module.XAI.cpp
+[9/25] Compile [x64] Module.XAI.cpp
+[10/25] Compile [x64] XAIMoveToProcessor.cpp
 [11/25] Compile [x64] XAIMovementComponent.cpp
 [12/25] Compile [x64] XAISTT_DirectlyMoveInLocation.cpp
 [13/25] Compile [x64] XAIProcessor.cpp
@@ -120,13 +120,13 @@ Using Unreal Build Accelerator local executor to run 25 action(s)
 [24/25] Compile [x64] XAITaskObject.cpp
 [25/25] Compile [x64] XAISTT_SetOrientRotationToMovement.cpp
 
-Total time in Unreal Build Accelerator local executor: 33.85 seconds
+Total time in Unreal Build Accelerator local executor: 34.13 seconds
 Output binary: B:\UnrealEngine\UE_5.8\Engine\Binaries\Win64\UnrealGame.exe
 
 Result: Succeeded
-Total execution time: 36.97 seconds
-Trace written to file C:\Users\dexie\AppData\Local\UnrealBuildTool\Trace.uba with size 13.5kb
-Took 37,15s to run dotnet.exe, ExitCode=0
+Total execution time: 37.36 seconds
+Trace written to file C:\Users\dexie\AppData\Local\UnrealBuildTool\Trace.uba with size 13.8kb
+Took 37,57s to run dotnet.exe, ExitCode=0
 Running: B:\UnrealEngine\UE_5.8\Engine\Binaries\ThirdParty\DotNet\10.0\win-x64\dotnet.exe "B:\UnrealEngine\UE_5.8\Engine\Binaries\DotNET\UnrealBuildTool\UnrealBuildTool.dll" UnrealGame Win64 Shipping -Project="B:\Projects\XAIDemo\Builds\XAI\HostProject\HostProject.uproject" -plugin="B:\Projects\XAIDemo\Builds\XAI\HostProject\Plugins\XAI\XAI.uplugin" -noubtmakefiles -manifest="B:\Projects\XAIDemo\Builds\XAI\HostProject\Saved\Manifest-UnrealGame-Win64-Shipping.xml" -nohotreload -log="C:\Users\dexie\AppData\Roaming\Unreal Engine\AutomationTool\Logs\B+UnrealEngine+UE_5.8\UBA-UnrealGame-Win64-Shipping.txt"
 Log file: C:\Users\dexie\AppData\Roaming\Unreal Engine\AutomationTool\Logs\B+UnrealEngine+UE_5.8\UBA-UnrealGame-Win64-Shipping.txt
 Determining max actions to execute in parallel (8 physical cores, 16 logical cores)
@@ -143,43 +143,11 @@ Using Visual Studio 14.44.35228 toolchain (B:\VisualStudio\Community\VC\Tools\MS
 =================================
 Using Unreal Build Accelerator local executor to run 25 action(s)
   CPU 8 physical cores, 16 logical cores
-  Memory 63.91 GB physical, 18.22 GB/67.91 GB committed
+  Memory 63.91 GB physical, 13.57 GB/67.91 GB committed
   UBA Storage capacity 40 GB
 [1/25] Compile [x64] XAI.cpp
-[2/25] Compile [x64] XAIFollowToActorAsyncAction.cpp
-[3/25] Compile [x64] XAIAnimInstance.cpp
+[2/25] Compile [x64] XAIAnimInstance.cpp
+[3/25] Compile [x64] XAIFollowToActorAsyncAction.cpp
 [4/25] Compile [x64] XAIFollowToActorProcessor.cpp
 [5/25] Compile [x64] XAIGameViewportClient.cpp
 [6/25] Compile [x64] XAIMoveToAsyncAction.cpp
-[7/25] Compile [x64] XAINavigationQueryFilter.cpp
-[8/25] Compile [x64] XAIFunctionLibrary.cpp
-[9/25] Compile [x64] XAIMoveToProcessor.cpp
-[10/25] Compile [x64] Module.XAI.cpp
-[11/25] Compile [x64] XAIMovementComponent.cpp
-[12/25] Compile [x64] XAIProcessor.cpp
-[13/25] Compile [x64] XAISTT_DirectlyMoveInLocation.cpp
-[14/25] Compile [x64] XAIActor.cpp
-[15/25] Compile [x64] XAISTT_FollowToActor.cpp
-[16/25] Compile [x64] XAISTT_GetRandomLocation.cpp
-[17/25] Compile [x64] XAISTT_MoveTo.cpp
-[18/25] Compile [x64] XAISTT_IsOnNavigation.cpp
-[19/25] Compile [x64] XAISTT_ProjectPointToNavigation.cpp
-[20/25] Compile [x64] XAISTT_SetMaxFlySpeed.cpp
-[21/25] Compile [x64] XAISTT_SetMaxWalkSpeed.cpp
-[22/25] Compile [x64] XAISTT_SetEnableAvoidance.cpp
-[23/25] Compile [x64] XAITickableTaskObject.cpp
-[24/25] Compile [x64] XAITaskObject.cpp
-[25/25] Compile [x64] XAISTT_SetOrientRotationToMovement.cpp
-
-Total time in Unreal Build Accelerator local executor: 26.81 seconds
-Output binary: B:\UnrealEngine\UE_5.8\Engine\Binaries\Win64\UnrealGame-Win64-Shipping.exe
-
-Result: Succeeded
-Total execution time: 28.40 seconds
-Trace written to file C:\Users\dexie\AppData\Local\UnrealBuildTool\Trace.uba with size 12.5kb
-Took 28,59s to run dotnet.exe, ExitCode=0
-Reading filter rules from B:\Projects\XAIDemo\Builds\XAI\HostProject\Plugins\XAI\Config\FilterPlugin.ini
-Loading FilterPluginWin64.ini
-BUILD SUCCESSFUL
-AutomationTool executed for 0h 2m 49s
-AutomationTool exiting with ExitCode=0 (Success)
