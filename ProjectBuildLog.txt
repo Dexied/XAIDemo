@@ -1,0 +1,76 @@
+﻿Using bundled DotNet SDK version: 10.0 win-x64
+Running UnrealBuildTool: dotnet "..\..\Engine\Binaries\DotNET\UnrealBuildTool\UnrealBuildTool.dll" -projectfiles -project=B:\Projects\XAIDemo\XAIDemo.uproject -game -engine
+Log file: C:\Users\dexie\AppData\Local\UnrealBuildTool\Log_GPF.txt
+
+Generating VisualStudio project files:
+Discovering modules, targets and source code for project...
+Writing 'B:\Projects\XAIDemo\Automation_XAIDemo.sln'...
+Writing 'B:\Projects\XAIDemo\Automation_XAIDemo.slnx'...
+Writing automation project files took 0.19s
+Adding projects for all targets...
+Adding projects for all targets took 2.29s
+Adding projects for all game projects took 0.00s
+Adding projects for all modules took 0.06s
+Compiling Rules Assemblies 100%
+Creating Build Targets 100%
+Binding IntelliSense data...
+Creating Build Targets took 0.51s
+Binding IntelliSense data... 100%
+Binding IntelliSense data took 1.82s
+Writing project files...
+Writing 'B:\Projects\XAIDemo\XAIDemo.sln'...
+Writing 'B:\Projects\XAIDemo\XAIDemo.slnx'...
+Writing project files... 100%
+Writing solution file took 0.05s
+Writing project files took 1.08s
+
+Generating QueryTargets data for editor...
+Compiling Rules Assemblies 100%
+Writing Query Target Info 100%
+Generating QueryTargets data for editor took 0.02s
+
+Result: Succeeded
+Total execution time: 8.85 seconds
+Trace written to file C:\Users\dexie\AppData\Local\UnrealBuildTool\Trace.uba with size 132.3kb
+Using bundled DotNet SDK version: 10.0 win-x64
+Running UnrealBuildTool: dotnet "..\..\Engine\Binaries\DotNET\UnrealBuildTool\UnrealBuildTool.dll" XAIDemoEditor Win64 Development -Project=B:\Projects\XAIDemo\XAIDemo.uproject -WaitMutex -FromMsBuild
+Log file: C:\Users\dexie\AppData\Local\UnrealBuildTool\Log.txt
+Determining max actions to execute in parallel (8 physical cores, 16 logical cores)
+  Executing up to 8 processes, one per physical core
+Using 'git status' to determine working set for adaptive non-unity build (B:\Projects\XAIDemo).
+Failed to start git process using command line git --no-optional-locks status --porcelain
+Creating makefile for XAIDemoEditor (no existing makefile)
+UbaServer - Listening on 0.0.0.0:1345
+UHT compiled-in object format Default
+Building XAIDemoEditor...
+===== Toolchain Information =====
+Using ISPC compiler (B:\UnrealEngine\UE_5.8\Engine\Source\ThirdParty\Intel\ISPC\bin\Windows\ispc.exe)
+  Intel(r) Implicit SPMD Program Compiler (Intel(r) ISPC), 1.24.0 (build commit  @ 20250404, LLVM 18.1.2) 
+Using Visual Studio 14.44.35229 toolchain (B:\VisualStudio\Community\VC\Tools\MSVC\14.44.35207) and Windows 10.0.22621.0 SDK (C:\Program Files (x86)\Windows Kits\10).
+=================================
+Using Unreal Build Accelerator local executor to run 15 action(s)
+  CPU 8 physical cores, 16 logical cores
+  Memory 63.91 GB physical, 20.41 GB/67.91 GB committed
+  UBA Storage capacity 40 GB
+[1/15] Compile Resource [x64] Default.rc2
+[2/15] Compile Resource [x64] Default.rc2
+[3/15] Compile Resource [x64] Default.rc2
+[4/15] Compile [x64] SharedPCH.UnrealEd.Project.ValApi.ValExpApi.Cpp20.cpp
+[5/15] Compile [x64] XAIDemo.cpp
+[6/15] Compile [x64] PerModuleInline.gen.cpp
+[7/15] Link [x64] UnrealEditor-XAIDemo.lib
+[8/15] Compile [x64] Module.XAIEditor.cpp
+[9/15] Link [x64] UnrealEditor-XAIEditor.lib
+[10/15] Compile [x64] Module.XAI.cpp
+[11/15] Link [x64] UnrealEditor-XAI.lib
+[12/15] Link [x64] UnrealEditor-XAIEditor.dll
+[13/15] Link [x64] UnrealEditor-XAIDemo.dll
+[14/15] Link [x64] UnrealEditor-XAI.dll
+[15/15] WriteMetadata XAIDemoEditor.target [NoUba]
+
+Total time in Unreal Build Accelerator local executor: 50.55 seconds
+Output binary: B:\UnrealEngine\UE_5.8\Engine\Binaries\Win64\UnrealEditor.exe
+
+Result: Succeeded
+Total execution time: 54.96 seconds
+Trace written to file C:\Users\dexie\AppData\Local\UnrealBuildTool\Trace.uba with size 12.1kb
